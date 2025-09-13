@@ -12,12 +12,13 @@ Google Fonts
 /*==========================================================================
 Common CSS
 ==========================================================================*/
-body {
+html, body {
   font-family: var(--body-font);
   color: var(--body-color);
   font-size: 16px;
   line-height: 26px;
   font-weight: 400;
+  height: 100%;
 }
 
 img {
@@ -51,7 +52,9 @@ a:hover {
 
 .section-padding.recent-events-section {
   padding: 120px 0px 0px 0px;
+  height: 100vh;
 }
+
 
 @media (max-width: 991px) {
   .section-padding {
@@ -101,6 +104,11 @@ a:hover {
   text-transform: capitalize;
 }
 
+.about__four .btn-one{
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
 .btn-one i {
   position: relative;
   top: 0px;
@@ -127,6 +135,7 @@ a:hover {
 .btn-one:hover i {
   transform: translateX(2px);
   color: var(--white);
+  border: none;
 }
 .btn-one:hover::before {
   left: 0;
@@ -726,7 +735,7 @@ Menu Bar CSS
   z-index: 99999;
   padding: 30px 30px;
   overflow: auto;
-  display: none;
+  /* display: none; */
 }
 .responsive__menu.show {
   left: 0px;
@@ -754,7 +763,7 @@ Menu Bar CSS
 .responsive__menu .responsive-sidebar-submenu-list__item {
   list-style: none;
   padding: 10px 0;
-  border-top: 1px solid var(--border-color-1);
+  border-top: 1px solid var(--card-color);
 }
 .responsive__menu .responsive-sidebar-submenu-list__item:first-child {
   margin-top: 10px;
@@ -776,7 +785,7 @@ Menu Bar CSS
   color: var(--white);
   list-style: none;
   padding: 16px 0;
-  border-bottom: 1px solid var(--border-color-1);
+  border-bottom: 1px solid var(--card-color);
   position: relative;
   cursor: pointer;
 }
@@ -784,7 +793,7 @@ Menu Bar CSS
   .responsive-sidebar-menu-list__item
   .responsive-sidebar-menu-list__item {
   border-bottom: 0;
-  border-top: 1px solid var(--border-color-1);
+  border-top: 1px solid var(--card-color);
 }
 .responsive__menu
   .responsive-sidebar-menu-list__item
@@ -810,13 +819,16 @@ Menu Bar CSS
   border-radius: 50%;
   background-color: var(--primary-color-1);
   text-align: center;
-  color: var(--black);
+  color: var(--white);
 }
 .responsive__menu
   .responsive-sidebar-menu-list__item.has-dropdown.active
   > .responsive-sidebar-menu-list__link::before {
   content: "-";
 }
+
+
+
 
 @media (max-width: 375px) {
   .responsive__menu {
@@ -830,6 +842,7 @@ Menu Bar CSS
     padding: 2px !important;
   }
 }
+
 @media (max-width: 575px) {
   .responsive__menu {
     left: -100%;
@@ -857,15 +870,45 @@ Menu Bar CSS
   }
 }
 
+@media (min-width: 992px) {
+  .responsive__menu {
+    width: 40% !important;
+    left: -40%; /* hidden hone ke liye */
+  }
+  .responsive__menu.show {
+    left: 0; /* jab active ho to slide in */
+  }
+}
+
+ 
 /*==========================================================================
 Footer  CSS
 ==========================================================================*/
 .footer__one {
   position: relative;
   z-index: 1;
-  background-color: var(--primary-color-1);
   padding-top: 90px;
+  background-image: url("../images/sub.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white; /* Optional: Text color for visibility */
 }
+
+.footer__one::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay, adjust opacity as needed */
+  z-index: -1;
+}
+
+
+
+
 .footer__one-widget h5 {
   color: var(--white);
   margin-bottom: 20px;
@@ -1054,6 +1097,12 @@ Swiper  CSS
 .award-section .swiper-slide {
   display: flex;
   align-items: baseline;
+}
+
+.award-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 /*==========================================================================
@@ -1276,15 +1325,17 @@ hero-section  CSS
   width: 100%;
   left: 0;
   z-index: 4;
-  padding-top: 50px;
+  padding-top: 10px;
   transition: background 0.3s ease, box-shadow 0.3s ease, margin-top 0.3s ease;
+   background: rgba(0, 0, 0, 0.29);
 }
 
 .header__sticky.glass {
-  background-color: var(--primary-color);
-  /* background: rgba(255, 255, 255, 0.15);
+  /* background-color: var(--primary-color); */
+  /* background: rgba(255, 255, 255, 0.15); */
+  background: rgba(0, 0, 0, 0.29);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); */
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   padding-top: 14px;
 }
@@ -1299,23 +1350,23 @@ hero-section  CSS
 .hero-section {
   background-color: var(--primary-color-1);
   position: relative;
-  min-height: 91vh;
+  min-height: 100vh;
   color: white;
   overflow: hidden;
 }
 
 /* Tablet: width >= 768px AND height >= 700px */
-@media (min-width: 768px) and (min-height: 700px) {
+/* @media (min-width: 768px) and (min-height: 700px) {
   .hero-section {
     min-height: 70vh;
   }
   .hero-pagination {
     left: 50% !important;
   }
-}
+} */
 
 /* Desktop: width >= 1024px AND height >= 768px */
-@media (min-width: 1024px) and (min-height: 500px) {
+/* @media (min-width: 1024px) and (min-height: 500px) {
   .hero-content .row {
     margin-top: 14% !important;
   }
@@ -1337,8 +1388,8 @@ hero-section  CSS
   .heroSwiper {
     top: 78% !important;
   }
-}
-@media (min-width: 1024px) and (min-height: 550px) {
+} */
+/* @media (min-width: 1024px) and (min-height: 550px) {
   .hero-content .row {
     margin-top: 14% !important;
   }
@@ -1360,8 +1411,8 @@ hero-section  CSS
   .heroSwiper {
     top: 78% !important;
   }
-}
-@media (min-width: 1024px) and (min-height: 580px) {
+} */
+/* @media (min-width: 1024px) and (min-height: 580px) {
   .hero-content .row {
     margin-top: 14% !important;
   }
@@ -1384,11 +1435,9 @@ hero-section  CSS
     top: 78% !important;
   }
 
-  /* .hero-content .row {
-  margin-top: 17% !important;
+
 } */
-}
-@media (min-width: 1024px) and (min-height: 600px) {
+/* @media (min-width: 1024px) and (min-height: 600px) {
   .hero-section {
     min-height: 100vh !important;
   }
@@ -1412,10 +1461,10 @@ hero-section  CSS
   .hero-section {
     min-height: 120vh;
   }
-}
+} */
 
 /* Desktop Specific: width >= 1366px AND height >= 800px */
-@media (min-width: 1366px) and (min-height: 768px) {
+/* @media (min-width: 1366px) and (min-height: 768px) {
   .hero-section {
     min-height: 100vh !important;
   }
@@ -1434,10 +1483,10 @@ hero-section  CSS
   .heroSwiper {
     top: 111% !important;
   }
-}
+} */
 
 /* Large Desktop: width >= 1400px AND height >= 480px */
-@media (min-width: 1400px) and (min-height: 500px) {
+/* @media (min-width: 1400px) and (min-height: 500px) {
   .hero-section {
     min-height: 100vh !important;
   }
@@ -1459,8 +1508,8 @@ hero-section  CSS
   p {
     font-size: 16px !important;
   }
-}
-@media (min-width: 1400px) and (min-height: 550px) {
+} */
+/* @media (min-width: 1400px) and (min-height: 550px) {
   .hero-section {
     min-height: 100vh !important;
   }
@@ -1482,8 +1531,8 @@ hero-section  CSS
   p {
     font-size: 16px !important;
   }
-}
-@media (min-width: 1400px) and (min-height: 580px) {
+} */
+/* @media (min-width: 1400px) and (min-height: 580px) {
   .hero-section {
     min-height: 100vh !important;
   }
@@ -1505,8 +1554,8 @@ hero-section  CSS
   p {
     font-size: 16px !important;
   }
-}
-@media (min-width: 1400px) and (min-height: 600px) {
+} */
+/* @media (min-width: 1400px) and (min-height: 600px) {
   .hero-section {
     min-height: 100vh !important;
   }
@@ -1530,9 +1579,9 @@ hero-section  CSS
   p {
     font-size: 16px !important;
   }
-}
+} */
 /* Large Desktop: width >= 1400px AND height >= 700px */
-@media (min-width: 1400px) and (min-height: 768px) {
+/* @media (min-width: 1400px) and (min-height: 768px) {
   .hero-section {
     min-height: 100vh !important;
   }
@@ -1551,10 +1600,10 @@ hero-section  CSS
   .heroSwiper {
     top: 111% !important;
   }
-}
+} */
 
 /* Large Desktop: width >= 1400px AND height >= 800px */
-@media (min-width: 1400px) and (min-height: 800px) {
+/* @media (min-width: 1400px) and (min-height: 800px) {
   .hero-section {
     min-height: 100vh !important;
   }
@@ -1573,13 +1622,11 @@ hero-section  CSS
   .heroSwiper {
     top: 90% !important;
   }
-  .hero-section {
-    min-height: 100vh;
-  }
+ 
   .hero-navigation {
     top: 147% !important;
   }
-}
+} */
 
 /* Large Desktop: width >= 1400px AND height >= 900px */
 @media (min-width: 1400px) and (min-height: 900px) {
@@ -1624,7 +1671,10 @@ hero-section  CSS
   width: 56%;
   position: absolute;
   right: 66px;
-  top: 57%;
+  /* top: 57%; */
+  height: max-content;
+  bottom: 0px;
+  z-index: 4;
 }
 
 .heroSwiper .swiper-wrapper {
@@ -1657,19 +1707,20 @@ hero-section  CSS
 }
 
 .hero-content {
-  position: relative;
+  position: absolute;
   z-index: 3;
+  bottom: 50px;
   /* padding-bottom: 60px; */
   /* padding-top: 5rem; */
   /* padding: 4rem 0; */
 }
 
 .hero-content .cta.btn-one {
-  padding: 6px 90px;
+  padding: 5px 35px;
 }
 .hero-content .btn-one {
   /* padding: 6px 55px; */
-  width: 100%;
+  width: max-content;
   display: block;
 }
 
@@ -1694,7 +1745,7 @@ hero-section  CSS
   overflow: hidden;
 
   display: -webkit-box;
-  -webkit-line-clamp: 8; /* ✅ Number of lines you want to show */
+  -webkit-line-clamp: 3; /* ✅ Number of lines you want to show */
   -webkit-box-orient: vertical;
 
   text-overflow: ellipsis;
@@ -1740,12 +1791,12 @@ hero-section  CSS
     transform: none;
     margin-top: 2rem;
   }
-
+/* 
   .hero-image {
     width: 100%;
     height: 300px;
     position: relative;
-  }
+  } */
 }
 
 /* or css  */
@@ -1818,14 +1869,15 @@ hero-section  CSS
 
 .hero-navigation {
   position: absolute;
-  top: 130%;
+  bottom: 17%;
+  /* top: 130%; */
   /* left: 55px; */
-  right: 0px;
+  right: 10px;
   z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(59% + 100px);
+  width: calc(57% + 100px);
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -2033,8 +2085,240 @@ hero-section  CSS
   z-index: -1;
 }
 
-.future-content {
-  visibility: hidden; 
-  opacity: 0;      
+/* .future-content {
+  visibility: hidden;
+  opacity: 0;
   transition: opacity 0.3s ease;
+} */
+
+/*==========================================================================
+About Area One CSS
+==========================================================================*/
+.about__four-image {
+  position: relative;
 }
+.about__four-image-wrapper {
+  border-radius: 61% 39% 63% 37%/35% 23% 77% 65%;
+  overflow: hidden;
+  max-width: 516px;
+  height: 522px;
+}
+.about__four-image-wrapper:hover {
+  animation-play-state: paused;
+}
+.about__four-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about__four-content h2 {
+  text-transform: none;
+  margin-bottom: 25px;
+}
+.about__four-content p {
+  margin-bottom: 25px;
+}
+.about__four-content-service {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 33px;
+}
+.about__four-content-service .service-top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.about__four-content-service .service-top i {
+  color: var(--primary-color-1);
+  margin-right: 12px;
+}
+.about__four-content-service p {
+  margin: 0;
+}
+.about__four-counter {
+  display: block;
+  text-align: center;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 16px 20px;
+  transition: 0.4s;
+  position: absolute;
+  z-index: 4;
+  width: 216px;
+  right: 104px;
+  bottom: 11px;
+}
+.about__four-counter .icon {
+  font-size: 60px;
+  color: var(--primary-color-1);
+  margin-bottom: 10px;
+}
+.about__four-counter-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+.about__four-counter-main .counter {
+  margin-bottom: -4px;
+  font-size: 50px;
+}
+.about__four-counter-main span {
+  font-size: 50px !important;
+  font-weight: 600;
+}
+
+@media (max-width: 535px) {
+  .about__four-image {
+    position: relative;
+    max-width: 95%;
+  }
+  .about__four-content-service {
+    flex-direction: column;
+    width: 78%;
+    gap: 20px;
+  }
+  .about__four-image-wrapper {
+    height: auto;
+  }
+}
+@media (max-width: 480px) {
+  .about__one-image-shape {
+    display: none;
+  }
+  .about__one-content p {
+    font-size: 15px;
+  }
+  .about__one-image .experience-bar {
+    right: 0;
+    top: 32px;
+  }
+}
+@media (max-width: 359px) {
+  .about__four-content-service {
+    width: 100%;
+  }
+  .about__four-counter {
+    right: 37px;
+  }
+  .about__four-counter-main {
+    margin-bottom: 16px;
+  }
+}
+
+
+.blob-animation {
+  animation: blob-animation 15s linear infinite;
+}
+
+@keyframes blob-animation {
+  0%, 100% {
+    border-radius: 40% 60% 70% 30%/40% 40% 60% 50%;
+  }
+  34% {
+    border-radius: 70% 30% 50% 50%/30% 30% 70% 70%;
+  }
+  67% {
+    border-radius: 100% 60% 60% 100%/100% 100% 60% 60%;
+  }
+}
+
+
+.animate-y-axis {
+    -webkit-animation-name: y-axis;
+    animation-name: y-axis;
+    -webkit-animation-duration: 11s;
+    animation-duration: 11s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+@-webkit-keyframes y-axis {
+    0% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+
+    50% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    100% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes y-axis {
+    0% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+
+    50% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    100% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+}
+
+
+/* parallex effect  */
+
+.scroll-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scroll-section .wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.scroll-section .item {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 1;
+}
+
+/* .section {
+  overflow: hidden;
+}
+
+.list {
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  display: flex;
+  position: relative;
+  padding: 0.2rem;
+}
+
+.item {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  inset: 0%;
+  box-shadow: rgb(149, 157, 165, 0.2) 0px 8px 24px;
+  overflow: hidden;
+}
+ */

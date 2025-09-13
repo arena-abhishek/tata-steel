@@ -23,11 +23,8 @@
     <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+
   </head>
 
   <body>
@@ -35,10 +32,10 @@
     <!-- header start  -->
     <header>
       <div class="header__sticky ">
-        <div class="container">
+        <div class="container-fluid  ">
           <div class="header_area_title">
             <div class="row px-3 px-sm-0">
-              <div class="col col-md-9 d-none d-lg-flex align-items-end">
+              <div class="col col-md-9 d-none d-lg-flex align-items-center">
                 <img src="assets/images/logo-22.png" loading="lazy"
                   style="width: 41rem;" alt="logo">
               </div>
@@ -60,8 +57,8 @@
                 <div
                   class="header__area-menubar-right-box-sidebar d-none d-lg-flex">
                   <div
-                    class="header__area-menubar-right-box-sidebar-popup-icon">
-                    <i class="flaticon-menu"></i> </div>
+                    class="header__area-menubar-right-box-sidebar-popup-icon ">
+                    <i class="fa fa-bars" id="hamburger-toggl"></i> </div>
                 </div>
                 <div
                   class="header__area-menubar-left-logo  d-flex align-items-center justify-content-between  pb-0 pb-md-2
@@ -84,7 +81,7 @@
                     src="assets/img/logo.png" alt></a>
               </div>
             </div> -->
-            <div class="header__area-menubar-center pb-2">
+            <div class="header__area-menubar-center pb-2 d-none">
               <div class="header__area-menubar-center-menu menu-responsive">
                 <ul id="mobilemenu">
                   <li class="menu-item-has-children"> <a href="#">ABOUT US <i
@@ -270,10 +267,12 @@
                     <a href="index.html"> <img src="assets/images/logo.png" alt>
                     </a>
                   </div>
-                  <p> Morbi et tellus imperdiet, aliquam nulla sed, dapibus
+
+                  <!--          <p> Morbi et tellus imperdiet, aliquam nulla sed, dapibus
                     erat. Aenean dapibus sem non purus venenatis vulputate.
-                    Donec accumsan eleifend blandit. Nullam auctor ligula </p>
-                  <div class="header__area-menubar-right-sidebar-popup-contact">
+                    Donec accumsan eleifend blandit. Nullam auctor ligula </p> -->
+
+                  <!--     <div class="header__area-menubar-right-sidebar-popup-contact">
                     <h4 class="mb-30">Get In Touch</h4>
                     <div
                       class="header__area-menubar-right-sidebar-popup-contact-item">
@@ -326,7 +325,7 @@
                       <li><a href="https://linkedin.com" target="_blank"><i
                             class="fab fa-linkedin-in"></i></a></li>
                     </ul>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="sidebar-overlay"></div>
                 <div class="menu-overlay"></div>
@@ -686,553 +685,677 @@
     <!-- header end -->
 
     <!-- Main content start -->
-    <main>
-      <!-- Hero section start -->
-      <section class="hero-section">
+    <main class="scroll-section section">
 
-        <!-- Main Swiper Slider Image -->
-        <div class="hero-image">
+      <div class="wrapper">
+        <div role="list" class="list">
+          <!-- Hero section start -->
+          <div role="listitem" class="item">
+            <section class="hero-section">
 
-          <div class="swiper heroSwiper2">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img loading="lazy" src="assets/images/banner-img/banner-1.png"
-                  alt="banner-image" />
-              </div>
-              <div class="swiper-slide">
-                <img loading="lazy" src="assets/images/banner-img/banner-2.png"
-                  alt="banner-image" />
-              </div>
-              <div class="swiper-slide">
-                <img loading="lazy" src="assets/images/banner-img/banner-3.png"
-                  alt="banner-image" />
-              </div>
-              <div class="swiper-slide">
-                <img loading="lazy" src="assets/images/banner-img/banner-4.png"
-                  alt="banner-image" />
+              <!-- Main Swiper Slider Image -->
+              <div class="hero-image">
+
+                <div class="swiper heroSwiper2">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img loading="lazy"
+                        src="assets/images/banner-img/banner-1.png"
+                        alt="banner-image" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img loading="lazy"
+                        src="assets/images/banner-img/banner-2.png"
+                        alt="banner-image" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img loading="lazy"
+                        src="assets/images/banner-img/banner-3.png"
+                        alt="banner-image" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img loading="lazy"
+                        src="assets/images/banner-img/banner-4.png"
+                        alt="banner-image" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img loading="lazy"
+                        src="assets/images/banner-img/banner-5.gif"
+                        alt="banner-image" />
+                    </div>
+
+                  </div>
+                  <div class="overlay"></div>
+                  <div class="swiper-pagination hero-pagination"></div>
+                  <!-- <div class="swiper-button-next"></div>
+             <div class="swiper-button-prev"></div> -->
+                </div>
+
+                <!-- 🔥 Transparent overlay (newly added) -->
+                <!-- <div class="hero-transparent-overlay"></div> -->
               </div>
 
-            </div>
-            <div class="overlay"></div>
-            <div class="swiper-pagination hero-pagination"></div>
-            <!-- <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div> -->
+              <!-- Container Content Layer -->
+              <div class="container-fluid   hero-content">
+                <div class="row">
+                  <div class="col-lg-4  future-content ">
+                    <p>
+                      The Tata group comprises over 100
+                      operating companies in seven business
+                      sectors: communications and information
+                      technology, engineering, materials,
+
+                    </p>
+                    <a href="#" class="cta btn-one btn-light mt-3">Learn
+                      More</a>
+                    <div class="mt-3 w-100 d-flex justify-content-between">
+                      <!--   <button class="btn-one btn-outline-light me-2">Tata
+                       Group</button>
+                     <button class="btn-one btn-outline-light">Tata Steel</button> -->
+                    </div>
+                  </div>
+                  <!-- <div class="col-lg-8"></div> -->
+                </div>
+              </div>
+              <!-- Thumbnail Slider -->
+              <div class="slider-container container-fluid   ">
+                <!-- Inside heroSwiper -->
+                <div class="hero-navigation">
+                  <div class="hero-button-prev">&larr;</div>
+                  <div class="hero-button-next">&rarr;</div>
+                </div>
+                <div class="swiper heroSwiper">
+                  <div class="swiper-wrapper">
+                    <!--       <div class="swiper-slide">
+                     <div class="card text-white">
+                       <img loading="lazy"
+                         src="assets/images/banner-img/banner-1.jpeg "
+                         alt="banner-image"
+                         class="card-img" />
+                       <div
+                         class="card-img-overlay d-flex align-items-end justify-content-center">
+                         <h6 class="m-0"> TATA STEEL</h6>
+                       </div>
+                     </div>
+                   </div> -->
+                    <div class="swiper-slide">
+                      <div class="card text-white">
+                        <img loading="lazy"
+                          src="assets/images/banner-img/banner-1.png "
+                          alt="banner-image"
+                          class="card-img" />
+                        <div
+                          class="card-img-overlay d-flex align-items-end justify-content-center">
+                          <h6 class="m-0"> INTEGRATED TOWN O&M SERVICES</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="card text-white">
+                        <img loading="lazy"
+                          src="assets/images/banner-img/banner-2.png"
+                          alt="banner-image"
+                          class="card-img" />
+                        <div
+                          class="card-img-overlay d-flex align-items-end justify-content-center">
+                          <h6 class="m-0"> INDUSTRIAL INTEGRATED SERVICES</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="card text-white">
+                        <img loading="lazy"
+                          src="assets/images/banner-img/banner-3.png"
+                          alt="banner-image"
+                          class="card-img" />
+                        <div
+                          class="card-img-overlay d-flex align-items-end justify-content-center">
+                          <h6 class="m-0"> WATER & WASTEWATER SERVICES</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="card text-white">
+                        <img loading="lazy"
+                          src="assets/images/banner-img/banner-4.png"
+                          alt="banner-image"
+                          class="card-img" />
+                        <div
+                          class="card-img-overlay d-flex align-items-end justify-content-center">
+                          <h6 class="m-0"> POWER DISTRIBUTION SERVICES
+
+                          </h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="card text-white">
+                        <img loading="lazy"
+                          src="assets/images/banner-img/banner-5.gif"
+                          alt="banner-image"
+                          class="card-img" />
+                        <div class="card-img-overlay d-flex align-items-end">
+                          <h6 class="m-0">ENGINEERING PROCUREMENT &
+                            CONSTRUCTION</h6>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
+          <!-- Hero section end -->
 
-          <!-- 🔥 Transparent overlay (newly added) -->
-          <!-- <div class="hero-transparent-overlay"></div> -->
-        </div>
-
-        <!-- Container Content Layer -->
-        <div class="container hero-content">
-          <div class="row">
-            <div class="col-lg-8"></div>
-            <div class="col-lg-4  future-content ">
-              <p >
-                The Tata group comprises over 100
-                operating companies in seven business
-                sectors: communications and information
-                technology, engineering, materials,
-                services, energy, consumer products and
-                chemicals. The group has operations in
-                more than 80 countries across six
-                continents, and its companies export
-                products and services to 85 countries.
-              </p>
-              <a href="#" class="cta btn-one btn-light mt-3">Learn More</a>
-              <div class="mt-3 w-100 d-flex justify-content-between">
-                <!--   <button class="btn-one btn-outline-light me-2">Tata
-                  Group</button>
-                <button class="btn-one btn-outline-light">Tata Steel</button> -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Thumbnail Slider -->
-          <div class="slider-container d-none d-lg-block">
-            <!-- Inside heroSwiper -->
-            <div class="hero-navigation">
-              <div class="hero-button-prev">&larr;</div>
-              <div class="hero-button-next">&rarr;</div>
-            </div>
-            <div class="swiper heroSwiper">
-              <div class="swiper-wrapper">
-                <!--       <div class="swiper-slide">
-                  <div class="card text-white">
-                    <img loading="lazy"
-                      src="assets/images/banner-img/banner-1.jpeg "
-                      alt="banner-image"
-                      class="card-img" />
-                    <div
-                      class="card-img-overlay d-flex align-items-end justify-content-center">
-                      <h6 class="m-0"> TATA STEEL</h6>
+          <!-- About Area Start -->
+          <div role="listitem" class="item">
+            <div class="about__four section-padding">
+              <div class="container-fluid">
+                <div class="row align-items-center flex-wrap-reverse gy-4">
+                  <div class="col-xl-6 col-lg-6 col-md-8">
+                    <div class="about__four-image">
+                      <div class="about__four-image-wrapper blob-animation">
+                        <img
+                          src="assets/images/Asset14-100.jpg" alt> </div>
+                      <div class="about__four-counter animate-y-axis">
+                        <div class="icon"> <i class="flaticon-growth"></i>
+                        </div>
+                        <div class="about__four-counter-wrap">
+                          <div class="about__four-counter-main">
+                            <h4 class="counter">25</h4> <span>+</span> </div>
+                          <span>Years Experience</span> </div>
+                      </div>
                     </div>
                   </div>
-                </div> -->
-                <div class="swiper-slide">
-                  <div class="card text-white">
-                    <img loading="lazy"
-                      src="assets/images/banner-img/banner-2.jpg "
-                      alt="banner-image"
-                      class="card-img" />
-                    <div
-                      class="card-img-overlay d-flex align-items-end justify-content-center">
-                      <h6 class="m-0"> INTEGRATED TOWN O&M SERVICES</h6>
-                    </div>
+                  <div class="col-xl-6 col-lg-12">
+                    <div class="about__four-content"> <span
+                        class="subtitle-four">About Company</span>
+                      <h2>Dedicated to Your Digital Success Journey</h2>
+                      <p>Crafting engaging websites to implementing powerful
+                        digital
+                        marketing strategies, we focus on understanding your
+                        unique
+                        needs and goals. Our dedication to your success means
+                        we’re
+                        always innovating to ensure stay ahead in digital
+                        landscape</p>
+                      <div class="about__four-content-service">
+                        <div class="about__four-content-service-single">
+                          <div class="service-top"> <i
+                              class="fas fa-check-circle"></i>
+                            <h6>Experienced Consultants</h6> </div>
+                          <p>We bring a wealth of knowledge and a fresh
+                            perspective
+                            to
+                            each project</p>
+                        </div>
+                        <div class="about__four-content-service-single">
+                          <div class="service-top"> <i
+                              class="fas fa-check-circle"></i>
+                            <h6>Commitment Success</h6> </div>
+                          <p>We are committed to fostering long-term
+                            relationships
+                            with our clients</p>
+                        </div>
+                      </div> <a href="about.html" class="btn-one">
+                        About us
+                        <i class="fas fa-plus"></i>
+                      </a> </div>
                   </div>
                 </div>
-                <div class="swiper-slide">
-                  <div class="card text-white">
-                    <img loading="lazy"
-                      src="assets/images/banner-img/banner-3.jpg"
-                      alt="banner-image"
-                      class="card-img" />
-                    <div
-                      class="card-img-overlay d-flex align-items-end justify-content-center">
-                      <h6 class="m-0"> INDUSTRIAL INTEGRATED SERVICES</h6>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card text-white">
-                    <img loading="lazy"
-                      src="assets/images/banner-img/banner-3.webp"
-                      alt="banner-image"
-                      class="card-img" />
-                    <div
-                      class="card-img-overlay d-flex align-items-end justify-content-center">
-                      <h6 class="m-0"> WATER & WASTEWATER SERVICES</h6>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card text-white">
-                    <img loading="lazy"
-                      src="assets/images/banner-img/banner-4.jpg"
-                      alt="banner-image"
-                      class="card-img" />
-                    <div
-                      class="card-img-overlay d-flex align-items-end justify-content-center">
-                      <h6 class="m-0"> POWER DISTRIBUTION SERVICES
-
-                      </h6>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card text-white">
-                    <img loading="lazy"
-                      src="assets/images/banner-img/banner-5.gif"
-                      alt="banner-image"
-                      class="card-img" />
-                    <div class="card-img-overlay d-flex align-items-end">
-                      <h6 class="m-0">ENGINEERING PROCUREMENT &
-                        CONSTRUCTION</h6>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Hero section end -->
-
-      <!-- Utilities section start -->
-      <section class="services_one section-padding utilities-section">
-        <div class="container my-5">
-          <div class="services__one-section-title   mb-5">
-            <h2
-              class="d-flex flex-column justify-items-start text-black ">
-              Quick Links <span class="  grey-heading-line bg-black"></span>
-            </h2>
-          </div>
-
-          <div class="row mt-5">
-            <!-- Left: 10 columns with 2 rows inside -->
-            <div class="col-12 col-lg-9">
-              <!-- Row 1 -->
-              <div class="row g-4 mb-4">
-                <div class="col-6 col-md-3">
-                  <div class="utilities-card">
-                  
-                    <div class="icon"><i class="fas fa-cog"></i></div>
-                    <div class="title">Utility Bill Query</div>
-                  </div>
-                </div>
-                <div class="col-6 col-md-3">
-                  <div class="utilities-card">
-                  
-                    <div class="icon"><i class="fas fa-lightbulb"></i></div>
-                    <div class="title">Public Notice Electricity
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6 col-md-3">
-                  <div class="utilities-card">
-                  
-                    <div class="icon"><i class="fas fa-rocket"></i></div>
-                    <div class="title">Know Your Bill</div>
-                  </div>
-                </div>
-                <div class="col-6 col-md-3">
-                  <div class="utilities-card">
-                  
-                    <div class="icon"><i
-                        class="fas fa-chart-line"></i></div>
-                    <div class="title">Public Notice Electricity
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Row 2 -->
-              <div class="row g-4">
-                <div class="col-6 col-md-3">
-                  <div class="utilities-card">
-                  
-                    <div class="icon"><i
-                        class="fas fa-user-shield"></i></div>
-                    <div class="title">Water Calculator</div>
-                  </div>
-                </div>
-                <div class="col-6 col-md-3">
-                  <div class="utilities-card">
-                  
-                    <div class="icon"><i class="fas fa-comments"></i></div>
-                    <div class="title">Power Connection Application </div>
-                  </div>
-                </div>
-                <div class="col-6 col-md-3">
-                  <div class="utilities-card">
-                  
-                    <div class="icon"><i class="fas fa-database"></i></div>
-                    <div class="title">Energy Calculator</div>
-                  </div>
-                </div>
-                <div class="col-6 col-md-3">
-                  <div class="utilities-card ">
-                  
-                    <div class="icon"><i class="	fas fa-paper-plane"></i></div>
-                    <div class="title">Vendor Communication</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right: 2 columns with single tall card -->
-            <!-- Right: 2 columns with single tall card -->
-            <div
-              class="col-12 col-lg-3 d-flex flex-column align-items-center text-center">
-              <!-- App Image -->
-              <img
-                src="assets/images/app.jpeg"
-                alt="App Image"
-                style="max-height: 281px; width: 63%;" class="img-fluid mb-3">
-
-              <!-- Download Buttons -->
-              <div class="w-100 d-flex  align-items-center gap-2">
-                <!-- Android Button -->
-                <a href="https://example.com/android-app.apk"
-                  class="btn p-0 border-0 app-btn d-flex align-items-center justify-content-center"
-                  style="width: 180px;" download>
-                  <img src="assets/images/Google play.png"
-                    alt="Download Android" class="img-fluid">
-                </a>
-
-                <!-- iOS Button -->
-                <a href="https://example.com/ios-app.apk"
-                  class="btn p-0 border-0 app-btn d-flex align-items-center justify-content-center"
-                  style="width: 180px;" download>
-                  <img src="assets/images/App Store.png" alt="Download iOS"
-                    class="img-fluid">
-                </a>
               </div>
             </div>
 
           </div>
+          <!-- About Area End -->
 
-        </div>
-      </section>
-      <!-- Utilities section end -->
+          <!-- Utilities section start -->
+          <div role="listitem" class="item">
+            <section class="services_one section-padding utilities-section">
+              <div class="container-fluid   my-5">
+                <div class="services__one-section-title   mb-5">
+                  <h2
+                    class="d-flex flex-column justify-items-start text-black ">
+                    Quick Links <span
+                      class="  grey-heading-line bg-black"></span>
+                  </h2>
+                </div>
 
-      <!-- Recents events section start -->
-      <section class="services_one section-padding recent-events-section">
-        <div class="container ">
-          <div
-            class="services__one-section-title  d-flex justify-content-between  mb-5">
-            <h2 class="text-black d-flex flex-column"> Recent Events <span
-                class="black-heading-line text-black"></span></h2>
-            <div class="swiper-buttons d-flex align-items-center gap-5 z-0">
-              <div class="swiper-button-prev recent-prev"></div>
-              <div class="swiper-button-next recent-next"></div>
-            </div>
-          </div>
-          <div class="recent-events-cards ">
-            <div class="swiper  recentEventsSwiper">
-              <div class="swiper-wrapper">
+                <div class="row mt-5">
+                  <!-- Left: 10 columns with 2 rows inside -->
+                  <div class="col-12 col-lg-9">
+                    <!-- Row 1 -->
+                    <div class="row g-4 mb-4">
+                      <div class="col-6 col-md-3">
+                        <div class="utilities-card">
 
-                <!-- Slide 1 -->
-                <div class="swiper-slide">
-                  <div class="event-card d-flex flex-column flex-md-row">
-                    <div class="col-md-5">
-                      <img src="assets/images/Recent Events/1.png"
-                        alt="Event Image"
-                        class="event-image w-100 h-100">
+                          <div class="icon"><i class="fas fa-cog"></i></div>
+                          <div class="title">Utility Bill Query</div>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="utilities-card">
+
+                          <div class="icon"><i
+                              class="fas fa-lightbulb"></i></div>
+                          <div class="title">Public Notice Electricity
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="utilities-card">
+
+                          <div class="icon"><i class="fas fa-rocket"></i></div>
+                          <div class="title">Know Your Bill</div>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="utilities-card">
+
+                          <div class="icon"><i
+                              class="fas fa-chart-line"></i></div>
+                          <div class="title">Public Notice Electricity
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div
-                      class="event-text col-md-7 d-flex flex-column justify-content-start align-items-start px-5 py-2">
-                      <h5 class="event-title">Amazing Event Title</h5>
-                      <p class="event-description text-start">This is a
-                        description of the event. Something interesting happened
-                        here, and we're talking about it now.</p>
+
+                    <!-- Row 2 -->
+                    <div class="row g-4">
+                      <div class="col-6 col-md-3">
+                        <div class="utilities-card">
+
+                          <div class="icon"><i
+                              class="fas fa-user-shield"></i></div>
+                          <div class="title">Water Calculator</div>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="utilities-card">
+
+                          <div class="icon"><i
+                              class="fas fa-comments"></i></div>
+                          <div class="title">Power Connection Application </div>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="utilities-card">
+
+                          <div class="icon"><i
+                              class="fas fa-database"></i></div>
+                          <div class="title">Energy Calculator</div>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="utilities-card ">
+
+                          <div class="icon"><i
+                              class="	fas fa-paper-plane"></i></div>
+                          <div class="title">Vendor Communication</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
-                  <div class="event-card d-flex flex-column flex-md-row">
-                    <div class="col-md-5">
-                      <img src="assets/images/Recent Events/2.png"
-                        alt="Event Image"
-                        class="event-image w-100 h-100">
-                    </div>
-                    <div
-                      class="event-text col-md-7 d-flex flex-column justify-content-start align-items-start px-5 py-2">
-                      <h5 class="event-title">Another Cool Event</h5>
-                      <p class="event-description text-start">Here's a little
-                        more information about another awesome event that took
-                        place recently.</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Slide 3 -->
-                <div class="swiper-slide">
-                  <div class="event-card d-flex flex-column flex-md-row">
-                    <div class="col-md-5">
-                      <img src="assets/images/Recent Events/3.png"
-                        alt="Event Image"
-                        class="event-image w-100 h-100">
-                    </div>
-                    <div
-                      class="event-text col-md-7 d-flex flex-column justify-content-start align-items-start px-5 py-2">
-                      <h5 class="event-title">Another Cool Event</h5>
-                      <p class="event-description text-start">Here's a little
-                        more information about another awesome event that took
-                        place recently.</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Slide 4 -->
-                <div class="swiper-slide">
-                  <div class="event-card d-flex flex-column flex-md-row">
-                    <div class="col-md-5">
-                      <img src="assets/images/Recent Events/2.png"
-                        alt="Event Image"
-                        class="event-image w-100 h-100">
-                    </div>
-                    <div
-                      class="event-text col-md-7 d-flex flex-column justify-content-start align-items-start px-5 py-2">
-                      <h5 class="event-title">Another Cool Event</h5>
-                      <p class="event-description text-start">Here's a little
-                        more information about another awesome event that took
-                        place recently.</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Slide 5 -->
-                <div class="swiper-slide">
-                  <div class="event-card d-flex flex-column flex-md-row">
-                    <div class="col-md-5">
-                      <img src="assets/images/Recent Events/1.png"
-                        alt="Event Image"
-                        class="event-image w-100 h-100">
-                    </div>
-                    <div
-                      class="event-text  col-md-7 d-flex flex-column justify-content-start align-items-start px-5 py-2">
-                      <h5 class="event-title">Another Cool Event</h5>
-                      
-                      <p class="event-description text-start">Here's a little
-                        more information about another awesome event that took
-                        place recently.</p>
-                        
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Recents events section end -->
 
-      <!-- Our Awards section start -->
-      <section class="services_one award-section " >
-        <div class="container pt-5">
-          <div
-            class="services__one-section-title d-flex justify-content-between mb-5">
-            <h2 class="text-black d-flex flex-column">Hall of Fame
-              <span class="black-heading-line text-black"></span>
-            </h2>
-            <div class="swiper-buttons d-flex align-items-center gap-5 z-0">
-              <div class="swiper-button-prev award-prev"></div>
-              <div class="swiper-button-next award-next"></div>
-            </div>
-          </div>
-
-          <div class="recent-events-cards">
-            <div class="swiper awardSwiper">
-              <div class="swiper-wrapper">
-
-                <div class="swiper-slide">
+                  <!-- Right: 2 columns with single tall card -->
+                  <!-- Right: 2 columns with single tall card -->
                   <div
-                    class="event-card d-flex flex-column flex-md-row-reverse">
-                    <div class="col-md-5">
-                      <img src="assets/images/Hall of Fame/1.png"
-                        alt="Award Image"
-                        class="event-image w-100 h-100">
-                    </div>
-                    <div
-                      class="  event-text col-md-7 d-flex flex-column justify-content-start align-items-start  py-2 pe-0 pe-md-5 ">
-                      <h5 class="  text-start">Tata Steel UISL receives
-                        "Excellence in Consistent TPM Commitment" Award</h5>
-                      <p class="event-description ">Tata Steel UISL is
-                        proud to announce that it has been conferred with the
-                        "Excellence in Consistent TPM Commitment" Award from
-                        Japan Institute of Plant Maintenance (JIPM) in a
-                        prestigious ceremony held on 21st March 2023 at Kyoto,
-                        Japan. Mr Dhananjay Mishra, Sr General Manager,
-                        Jharkhand Business and Corporate Services, Mr V P Singh,
-                        Sr. General Manager, Power Services Division and Mr
+                    class="col-12 col-lg-3 d-flex flex-column align-items-center text-center">
+                    <!-- App Image -->
+                    <img
+                      src="assets/images/app.jpeg"
+                      alt="App Image"
+                      style="max-height: 281px; width: 63%;"
+                      class="img-fluid mb-3">
 
-                      </p>
+                    <!-- Download Buttons -->
+                    <div class="w-100 d-flex  align-items-center gap-2">
+                      <!-- Android Button -->
+                      <a href="https://example.com/android-app.apk"
+                        class="btn p-0 border-0 app-btn d-flex align-items-center justify-content-center"
+                        style="width: 180px;" download>
+                        <img src="assets/images/Google play.png"
+                          alt="Download Android" class="img-fluid">
+                      </a>
+
+                      <!-- iOS Button -->
+                      <a href="https://example.com/ios-app.apk"
+                        class="btn p-0 border-0 app-btn d-flex align-items-center justify-content-center"
+                        style="width: 180px;" download>
+                        <img src="assets/images/App Store.png"
+                          alt="Download iOS"
+                          class="img-fluid">
+                      </a>
                     </div>
                   </div>
+
                 </div>
 
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
+              </div>
+            </section>
+          </div>
+
+          <!-- Utilities section end -->
+
+          <!-- Recents events section start -->
+          <div role="listitem" class="item">
+            <section class="services_one section-padding recent-events-section">
+              <div class="container-fluid   ">
+                <div
+                  class="services__one-section-title  d-flex justify-content-between  mb-5">
+                  <h2 class="text-black d-flex flex-column"> Recent Events <span
+                      class="black-heading-line text-black"></span></h2>
                   <div
-                    class="event-card d-flex flex-column flex-md-row-reverse">
-                    <div class="col-md-5">
-                      <img src="assets/images/Hall of Fame/2.png"
-                        alt="Award Image"
-                        class="event-image w-100 h-100">
-                    </div>
-                    <div
-                      class="event-text col-md-7 d-flex flex-column justify-content-start align-items-start  py-2">
-                      <h5 class="  text-start">Tata Steel UISL receives
-                        "Excellence in Consistent TPM Commitment" Award</h5>
-                      <p class="event-description ">Tata Steel UISL is
-                        proud to announce that it has been conferred with the
-                        "Excellence in Consistent TPM Commitment" Award from
-                        Japan Institute of Plant Maintenance (JIPM) in a
-                        prestigious ceremony held on 21st March 2023 at Kyoto,
-                        Japan. Mr Dhananjay Mishra, Sr General Manager,
-                        Jharkhand Business and Corporate Services, Mr V P Singh,
-                        Sr. General Manager, Power Services Division and Mr
-                      </p>
+                    class="swiper-buttons d-flex align-items-center gap-5 z-0">
+                    <div class="swiper-button-prev recent-prev"></div>
+                    <div class="swiper-button-next recent-next"></div>
+                  </div>
+                </div>
+                <div class="recent-events-cards ">
+                  <div class="swiper  recentEventsSwiper">
+                    <div class="swiper-wrapper">
+
+                      <!-- Slide 1 -->
+                      <div class="swiper-slide">
+                        <div class="event-card d-flex flex-column flex-md-row">
+                          <div class="col-md-5">
+                            <img src="assets/images/Recent Events/1.png"
+                              alt="Event Image"
+                              class="event-image w-100 h-100">
+                          </div>
+                          <div
+                            class="event-text col-md-7 d-flex flex-column justify-content-start align-items-start px-5 py-2">
+                            <h5 class="event-title">Amazing Event Title</h5>
+                            <p class="event-description text-start">This is a
+                              description of the event. Something interesting
+                              happened
+                              here, and we're talking about it now.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Slide 2 -->
+                      <div class="swiper-slide">
+                        <div class="event-card d-flex flex-column flex-md-row">
+                          <div class="col-md-5">
+                            <img src="assets/images/Recent Events/2.png"
+                              alt="Event Image"
+                              class="event-image w-100 h-100">
+                          </div>
+                          <div
+                            class="event-text col-md-7 d-flex flex-column justify-content-start align-items-start px-5 py-2">
+                            <h5 class="event-title">Another Cool Event</h5>
+                            <p class="event-description text-start">Here's a
+                              little
+                              more information about another awesome event that
+                              took
+                              place recently.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Slide 3 -->
+                      <div class="swiper-slide">
+                        <div class="event-card d-flex flex-column flex-md-row">
+                          <div class="col-md-5">
+                            <img src="assets/images/Recent Events/3.png"
+                              alt="Event Image"
+                              class="event-image w-100 h-100">
+                          </div>
+                          <div
+                            class="event-text col-md-7 d-flex flex-column justify-content-start align-items-start px-5 py-2">
+                            <h5 class="event-title">Another Cool Event</h5>
+                            <p class="event-description text-start">Here's a
+                              little
+                              more information about another awesome event that
+                              took
+                              place recently.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Slide 4 -->
+                      <div class="swiper-slide">
+                        <div class="event-card d-flex flex-column flex-md-row">
+                          <div class="col-md-5">
+                            <img src="assets/images/Recent Events/2.png"
+                              alt="Event Image"
+                              class="event-image w-100 h-100">
+                          </div>
+                          <div
+                            class="event-text col-md-7 d-flex flex-column justify-content-start align-items-start px-5 py-2">
+                            <h5 class="event-title">Another Cool Event</h5>
+                            <p class="event-description text-start">Here's a
+                              little
+                              more information about another awesome event that
+                              took
+                              place recently.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Slide 5 -->
+                      <div class="swiper-slide">
+                        <div class="event-card d-flex flex-column flex-md-row">
+                          <div class="col-md-5">
+                            <img src="assets/images/Recent Events/1.png"
+                              alt="Event Image"
+                              class="event-image w-100 h-100">
+                          </div>
+                          <div
+                            class="event-text  col-md-7 d-flex flex-column justify-content-start align-items-start px-5 py-2">
+                            <h5 class="event-title">Another Cool Event</h5>
+
+                            <p class="event-description text-start">Here's a
+                              little
+                              more information about another awesome event that
+                              took
+                              place recently.</p>
+
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
                 </div>
+              </div>
+            </section>
+          </div>
 
-                <!-- Slide 3 -->
-                <div class="swiper-slide">
+          <!-- Recents events section end -->
+
+          <!-- Our Awards section start -->
+          <div role="listitem" class="item">
+            <section class="services_one award-section ">
+              <div class="container-fluid   pt-5">
+                <div
+                  class="services__one-section-title d-flex justify-content-between mb-5">
+                  <h2 class="text-black d-flex flex-column">Hall of Fame
+                    <span class="black-heading-line text-black"></span>
+                  </h2>
                   <div
-                    class="event-card d-flex flex-column flex-md-row-reverse">
-                    <div class="col-md-5">
-                      <img src="assets/images/Hall of Fame/2.png"
-                        alt="Award Image"
-                        class="event-image w-100 h-100">
-                    </div>
-                    <div
-                      class="event-text col-md-7 d-flex flex-column justify-content-start align-items-start  py-2">
-                      <h5 class=" event-title  text-start">Tata Steel UISL
-                        receives
-                        "Excellence in Consistent TPM Commitment" Award</h5>
-                      <p class="event-description ">Tata Steel UISL is
-                        proud to announce that it has been conferred with the
-                        "Excellence in Consistent TPM Commitment" Award from
-                        Japan Institute of Plant Maintenance (JIPM) in a
-                        prestigious ceremony held on 21st March 2023 at Kyoto,
-                        Japan. Mr Dhananjay Mishra, Sr General Manager,
-                        Jharkhand Business and Corporate Services, Mr V P Singh,
-                        Sr. General Manager, Power Services Division and Mr
-                      </p>
-                    </div>
+                    class="swiper-buttons d-flex align-items-center gap-5 z-0">
+                    <div class="swiper-button-prev award-prev"></div>
+                    <div class="swiper-button-next award-next"></div>
                   </div>
                 </div>
 
-                <!-- Slide 4 -->
-                <div class="swiper-slide">
-                  <div
-                    class="event-card d-flex flex-column flex-md-row-reverse">
-                    <div class="col-md-5">
-                      <img src="assets/images/Hall of Fame/3.png"
-                        alt="Award Image"
-                        class="event-image w-100 h-100">
-                    </div>
-                    <div
-                      class="event-text col-md-7 d-flex flex-column justify-content-start align-items-start  py-2">
-                      <h5 class="  text-start">Tata Steel UISL receives
-                        "Excellence in Consistent TPM Commitment" Award</h5>
-                      <p class="event-description ">Tata Steel UISL is
-                        proud to announce that it has been conferred with the
-                        "Excellence in Consistent TPM Commitment" Award from
-                        Japan Institute of Plant Maintenance (JIPM) in a
-                        prestigious ceremony held on 21st March 2023 at Kyoto,
-                        Japan. Mr Dhananjay Mishra, Sr General Manager,
-                        Jharkhand Business and Corporate Services, Mr V P Singh,
-                        Sr. General Manager, Power Services Division and Mr
+                <div class="recent-events-cards">
+                  <div class="swiper awardSwiper">
+                    <div class="swiper-wrapper">
 
-                      </p>
+                      <div class="swiper-slide">
+                        <div
+                          class="event-card d-flex flex-column flex-md-row-reverse">
+                          <div class="col-md-5">
+                            <img src="assets/images/Hall of Fame/1.png"
+                              alt="Award Image"
+                              class="event-image w-100 h-100">
+                          </div>
+                          <div
+                            class="  event-text col-md-7 d-flex flex-column justify-content-start align-items-start  py-2 pe-0 pe-md-5 ">
+                            <h5 class="  text-start">Tata Steel UISL receives
+                              "Excellence in Consistent TPM Commitment"
+                              Award</h5>
+                            <p class="event-description ">Tata Steel UISL is
+                              proud to announce that it has been conferred with
+                              the
+                              "Excellence in Consistent TPM Commitment" Award
+                              from
+                              Japan Institute of Plant Maintenance (JIPM) in a
+                              prestigious ceremony held on 21st March 2023 at
+                              Kyoto,
+                              Japan. Mr Dhananjay Mishra, Sr General Manager,
+                              Jharkhand Business and Corporate Services, Mr V P
+                              Singh,
+                              Sr. General Manager, Power Services Division and
+                              Mr
+
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Slide 2 -->
+                      <div class="swiper-slide">
+                        <div
+                          class="event-card d-flex flex-column flex-md-row-reverse">
+                          <div class="col-md-5">
+                            <img src="assets/images/Hall of Fame/2.png"
+                              alt="Award Image"
+                              class="event-image w-100 h-100">
+                          </div>
+                          <div
+                            class="event-text col-md-7 d-flex flex-column justify-content-start align-items-start  py-2">
+                            <h5 class="  text-start">Tata Steel UISL receives
+                              "Excellence in Consistent TPM Commitment"
+                              Award</h5>
+                            <p class="event-description ">Tata Steel UISL is
+                              proud to announce that it has been conferred with
+                              the
+                              "Excellence in Consistent TPM Commitment" Award
+                              from
+                              Japan Institute of Plant Maintenance (JIPM) in a
+                              prestigious ceremony held on 21st March 2023 at
+                              Kyoto,
+                              Japan. Mr Dhananjay Mishra, Sr General Manager,
+                              Jharkhand Business and Corporate Services, Mr V P
+                              Singh,
+                              Sr. General Manager, Power Services Division and
+                              Mr
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Slide 3 -->
+                      <div class="swiper-slide">
+                        <div
+                          class="event-card d-flex flex-column flex-md-row-reverse">
+                          <div class="col-md-5">
+                            <img src="assets/images/Hall of Fame/2.png"
+                              alt="Award Image"
+                              class="event-image w-100 h-100">
+                          </div>
+                          <div
+                            class="event-text col-md-7 d-flex flex-column justify-content-start align-items-start  py-2">
+                            <h5 class=" event-title  text-start">Tata Steel UISL
+                              receives
+                              "Excellence in Consistent TPM Commitment"
+                              Award</h5>
+                            <p class="event-description ">Tata Steel UISL is
+                              proud to announce that it has been conferred with
+                              the
+                              "Excellence in Consistent TPM Commitment" Award
+                              from
+                              Japan Institute of Plant Maintenance (JIPM) in a
+                              prestigious ceremony held on 21st March 2023 at
+                              Kyoto,
+                              Japan. Mr Dhananjay Mishra, Sr General Manager,
+                              Jharkhand Business and Corporate Services, Mr V P
+                              Singh,
+                              Sr. General Manager, Power Services Division and
+                              Mr
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Slide 4 -->
+                      <div class="swiper-slide">
+                        <div
+                          class="event-card d-flex flex-column flex-md-row-reverse">
+                          <div class="col-md-5">
+                            <img src="assets/images/Hall of Fame/3.png"
+                              alt="Award Image"
+                              class="event-image w-100 h-100">
+                          </div>
+                          <div
+                            class="event-text col-md-7 d-flex flex-column justify-content-start align-items-start  py-2">
+                            <h5 class="  text-start">Tata Steel UISL receives
+                              "Excellence in Consistent TPM Commitment"
+                              Award</h5>
+                            <p class="event-description ">Tata Steel UISL is
+                              proud to announce that it has been conferred with
+                              the
+                              "Excellence in Consistent TPM Commitment" Award
+                              from
+                              Japan Institute of Plant Maintenance (JIPM) in a
+                              prestigious ceremony held on 21st March 2023 at
+                              Kyoto,
+                              Japan. Mr Dhananjay Mishra, Sr General Manager,
+                              Jharkhand Business and Corporate Services, Mr V P
+                              Singh,
+                              Sr. General Manager, Power Services Division and
+                              Mr
+
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Add more slides like above if needed -->
+
                     </div>
                   </div>
                 </div>
+              </div>
+            </section>
+          </div>
 
-                <!-- Add more slides like above if needed -->
+          <!-- Our Awards section end -->
 
+          <!-- Banner section start -->
+          <!--    <section class="subscribe__one d-flex align-items-center"
+         >
+          
+          <div class="container-fluid  ">
+            <div class="row gy-3 align-items-center">
+              <div class="col-xl-8 col-lg-6">
+                <h2 class="text-start">Tata Steel UlSL IS committed to SAFETY AND
+                  SUSTAINABILITY</h2>
+                <span class="footer-heading-line"></span>
+              </div>
+              <div class="col-xl-4 col-lg-6 text-center">
+                <div class="subscribe__two-right justify-content-lg-center">
+                  <a class="btn-one" href="#">Learn More<i
+                      class="fas fa-chevron-right"></i></a>
+                </div>
               </div>
             </div>
           </div>
+          <div class="overlay"></div>
+        </section> -->
+          <!-- Banner section end -->
         </div>
-      </section>
-
-      <!-- Our Awards section end -->
-
-      <!-- Banner section start -->
-      <section class="subscribe__one d-flex align-items-center"
-       >
-        
-        <div class="container">
-          <div class="row gy-3 align-items-center">
-            <div class="col-xl-8 col-lg-6">
-              <h2 class="text-start">Tata Steel UlSL IS committed to SAFETY AND
-                SUSTAINABILITY</h2>
-              <span class="footer-heading-line"></span>
-            </div>
-            <div class="col-xl-4 col-lg-6 text-center">
-              <div class="subscribe__two-right justify-content-lg-center">
-                <a class="btn-one" href="#">Learn More<i
-                    class="fas fa-chevron-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="overlay"></div>
-      </section>
-      <!-- Banner section end -->
+      </div>
 
     </main>
     <!-- Main content end -->
 
     <!-- footer start -->
     <footer>
-      <div class="footer__one">
-        <div class="container">
-          <a href="#"><img src="assets/images/logo.png" alt></a>
+      <div class="footer__one pb-2">
+        <div class="container-fluid  ">
+          <!-- <a href="#"><img src="assets/images/logo.png" alt></a> -->
           <div class="footer-wrapper mt-5">
             <div class="footer__one-widget">
               <div class="footer__one-widget-about ">
@@ -1243,7 +1366,7 @@
                   consumer products and chemicals. The group has operations in
                   more than 80 countries across six continents, and its
                   companies export products and services to 85 countries.</p>
-                <div class="footer-card mb-4 ">
+                <!-- <div class="footer-card mb-4 ">
                   <p class="text-center">Jamshedpur
                     Operations</p>
                 </div>
@@ -1251,7 +1374,7 @@
                   <p class="text-center">Seraikela-Kharsawan
                     Power Distribution
                     Operations</p>
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="footer__one-widget">
@@ -1315,7 +1438,7 @@
             </div>
           </div>
         </div>
-        <div class="copyright__one ">
+        <div class="copyright__one mt-4 ">
           <div class="container">
             <div
               class=" d-flex text-white justify-content-end copyright__one-container-area">
@@ -1333,9 +1456,9 @@
             </div>
           </div>
         </div>
-        <div class="footer-last-container mt-4 ">
+        <!-- <div class="footer-last-container mt-4 ">
 
-        </div>
+        </div> -->
       </div>
     </footer>
     <!-- footer end  -->
@@ -1347,13 +1470,32 @@
     </div>
 
     <!-- chatbot icon end -->
-
-    <!-- scripts -->
-
+    <!-- jQuery -->
     <script
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Waypoints (required by counterUp) -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+    <!-- CounterUp -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Swiper -->
     <script
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Custom Script -->
     <script src="assets/js/index.js"></script>
 
   </body>
