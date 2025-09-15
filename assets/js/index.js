@@ -69,22 +69,38 @@
   });
 
   // Dropdown Toggle
-  $(document).ready(function () {
-    $(".responsive-sidebar-menu-list__item.has-dropdown").removeClass("open");
+$(document).ready(function () {
+  // Step 1: Hide all submenus initially
+  $(".responsive-sidebar-submenu").hide();
 
-    $(".responsive-sidebar-menu-list__item.has-dropdown > a").on(
-      "click",
-      function (e) {
-        e.preventDefault();
+  // Step 2: Toggle submenus on click
+  $(".responsive-sidebar-menu-list").on("click", ".has-dropdown > a", function (e) {
+    e.preventDefault();
 
-        var $currentItem = $(this).parent();
-        var $allItems = $(".responsive-sidebar-menu-list__item.has-dropdown");
+    var $clickedItem = $(this).parent(".has-dropdown");
+    var $submenu = $clickedItem.children(".responsive-sidebar-submenu");
 
-        $allItems.not($currentItem).removeClass("open");
-        $currentItem.toggleClass("open");
-      }
-    );
+    // Close other submenus at the same level
+    $clickedItem
+      .siblings(".has-dropdown")
+      .removeClass("open")
+      .children(".responsive-sidebar-submenu")
+      .slideUp();
+
+    // Also close all nested open submenus inside this clicked item (for clean collapse)
+    $clickedItem
+      .siblings(".has-dropdown")
+      .find(".has-dropdown")
+      .removeClass("open")
+      .children(".responsive-sidebar-submenu")
+      .slideUp();
+
+    // Toggle current submenu
+    $clickedItem.toggleClass("open");
+    $submenu.stop(true, true).slideToggle();
   });
+});
+
 
   /* 
     $("#hamburger-toggl").on("click", function () {
@@ -112,7 +128,7 @@
     );
   }); */
   /* \\\\\\\\\ */
-  $(document).on("click", ".sidebar-menu-show-hide", function () {
+/*   $(document).on("click", ".sidebar-menu-show-hide", function () {
     $(".responsive__menu").addClass("show");
     $(".menu-overlay").addClass("show");
   });
@@ -141,7 +157,7 @@
         .children(".responsive-sidebar-submenu")
         .slideDown(200);
     }
-  });
+  }); */
 
   ///============= Header Sticky =============\\\
   /*   $(function () {
@@ -288,7 +304,6 @@
     mainSwiper.slidePrev(); // ✅ This will auto move thumbSwiper too
   });
 
- 
   window.addEventListener("scroll", () => {
     const header = document.querySelector(".header__sticky");
     if (!header) return;
@@ -316,7 +331,87 @@
 
   /* for parallex  */
 
+  const lenis = new Lenis({
+    smooth: true,
+    lerp: 0.04, // lower = smoother (0.05 to 0.1 is ideal)
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
+  ScrollTrigger.scrollerProxy(document.body, {
+    scrollTop(value) {
+      return arguments.length
+        ? lenis.scrollTo(value)
+        : lenis.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    },
+    pinType: document.body.style.transform ? "transform" : "fixed",
+  });
+
+  ScrollTrigger.addEventListener("refresh", () => lenis.update());
+  ScrollTrigger.refresh();
+
   function initScroll(section, $items) {
+    $items.each(function (index) {
+      if (index !== 0) {
+        gsap.set(this, { yPercent: 100 });
+      }
+    });
+
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        scroller: document.body, // Important for Lenis
+        pin: true,
+        start: "top top",
+        end: () => `+=${$items.length * 100}%`,
+        scrub: true,
+        invalidateOnRefresh: true,
+        // markers: true,
+      },
+      defaults: {
+        ease: "power3.out", // more natural than expo for water feel
+      },
+    });
+
+    $items.each(function (index) {
+      if (index === $items.length - 1) return;
+
+      const currentItem = $items[index];
+      const nextItem = $items[index + 1];
+
+      timeline.to(currentItem, {
+        scale: 1,
+        opacity: 0.9,
+        duration: 1.3,
+          // filter: "blur(1px)",
+      });
+
+      timeline.to(
+        nextItem,
+        {
+          yPercent: 0,
+          filter: "blur(0px)",
+          duration: 1.3,
+        },
+        "<"
+      );
+    });
+  }
+
+  /*   function initScroll(section, $items) {
     // Initial state: first item visible, baaki neeche (yPercent: 100)
     $items.each(function (index) {
       if (index !== 0) {
@@ -344,8 +439,8 @@
       const nextItem = $items[index + 1];
 
       timeline.to(currentItem, {
-        scale: 0.9,
-        borderRadius: "10px",
+        scale: 1,
+        // borderRadius: "10px",
       });
 
       timeline.to(
@@ -356,13 +451,12 @@
         "<"
       );
     });
-  }
+  } */
 
-   ///============= CounterUp =============\\\
+  ///============= CounterUp =============\\\
   var counter = $(".counter");
   counter.counterUp({
     time: 2500,
     delay: 100,
   });
-
 })(jQuery);
