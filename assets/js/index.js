@@ -404,7 +404,7 @@ function resetProgressBar(selector) {
 
   const bannerSlider = new Swiper(".bannerSlider", {
     loop: true,
-    speed: 3000, // smooth transition
+    speed: 2000, // smooth transition
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,

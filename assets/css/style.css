@@ -2034,6 +2034,9 @@ hero-section  CSS
 .banner-section .hero-pagination {
   left: 50% !important;
 }
+.banner-section{
+  height: 100vh;
+}
 
 .banner-section .banner-next,
 .banner-section .banner-perv {
