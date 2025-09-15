@@ -7,7 +7,7 @@
 /*==========================================================================
 Google Fonts
 ==========================================================================*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 /*==========================================================================
 Common CSS
 ==========================================================================*/
@@ -151,8 +151,8 @@ a:hover {
   --primary-text-color: #231f20;
   --secondary-text-color: #58595b;
   --border-color: #ccc;
-  --body-font: "poppins", sans-serif;
-  --heading-font: "poppins", sans-serif;
+  --body-font: "Lato", sans-serif;
+  --heading-font: "Lato", sans-serif;
   --white: #ffffff;
   --black: #000000;
   --p-color: #6a726f;
@@ -185,7 +185,7 @@ h1 {
   margin: 0;
   color: var(--text-heading-color);
   font-family: var(--heading-font);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h2 {
@@ -195,7 +195,7 @@ h2 {
   margin: 0;
   color: var(--text-heading-color);
   font-family: var(--heading-font);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h3 {
@@ -205,7 +205,7 @@ h3 {
   margin: 0;
   color: var(--text-heading-color);
   font-family: var(--heading-font);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h4 {
@@ -215,7 +215,7 @@ h4 {
   margin: 0;
   color: var(--text-heading-color);
   font-family: var(--heading-font);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h5 {
@@ -235,7 +235,7 @@ h6 {
   margin: 0;
   color: var(--text-heading-color);
   font-family: var(--heading-font);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 p {
@@ -1135,7 +1135,7 @@ position: absolute;
   border-radius: 3px;
 }
  */
- .autoplay-progress {
+.autoplay-progress {
   position: absolute;
   bottom: 60px;
   left: 0;
@@ -1159,7 +1159,6 @@ position: absolute;
   border-radius: 3px;
   transition: none;
 }
-
 
 /*==========================================================================
 Award  CSS
@@ -2032,12 +2031,12 @@ hero-section  CSS
   z-index: 10;
 }
 
-.banner-section .hero-pagination{
-left: 50% !important;
+.banner-section .hero-pagination {
+  left: 50% !important;
 }
 
 .banner-section .banner-next,
-.banner-section .banner-perv{
+.banner-section .banner-perv {
   color: #fff;
 }
 
@@ -2102,7 +2101,7 @@ left: 50% !important;
 
 .event-description {
   font-size: 0.95rem;
-  color: #6c757d;
+  color: #ced1d4;
 }
 @media (max-width: 767.98px) {
   .event-card {
@@ -2141,9 +2140,15 @@ left: 50% !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* opacity: 0.5;  👈 Adjust this value */
   z-index: -1;
+    /* Overlay color with opacity */
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+
+  /* This blends the background image with the overlay color */
+  background-blend-mode: darken; /* or use multiply, overlay, etc. */
+
 }
+
 .award-section {
   position: relative;
   /* padding: 70px 0; */
@@ -2164,6 +2169,12 @@ left: 50% !important;
   background-size: cover;
   /* opacity: 0.3; 👈 Adjust this value */
   z-index: -1;
+      /* Overlay color with opacity */
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+
+  /* This blends the background image with the overlay color */
+  background-blend-mode: darken; /* or use multiply, overlay, etc. */
+
 }
 
 /* .future-content {
@@ -2385,9 +2396,9 @@ About Area One CSS
 
 .banner-content {
   position: absolute;
-  top: 20%;         /* Adjust vertical position */
-  left: 40px;        /* Adjust horizontal position */
-  z-index: 10;       /* Make sure it's above Swiper */
+  top: 20%; /* Adjust vertical position */
+  left: 40px; /* Adjust horizontal position */
+  z-index: 10; /* Make sure it's above Swiper */
   color: white;
   max-width: 530px;
 }
@@ -2404,8 +2415,6 @@ About Area One CSS
   font-weight: 400;
   margin: 0;
 }
-
-
 
 /* .section {
   overflow: hidden;

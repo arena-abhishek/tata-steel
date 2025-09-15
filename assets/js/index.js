@@ -404,7 +404,7 @@ function resetProgressBar(selector) {
 
   const bannerSlider = new Swiper(".bannerSlider", {
     loop: true,
-    speed: 5000, // smooth transition
+    speed: 3000, // smooth transition
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
@@ -464,8 +464,9 @@ function resetProgressBar(selector) {
       header.classList.remove("glass");
     }
   });
-
-  gsap.registerPlugin(ScrollTrigger);
+  
+  /* for parallex  */
+ /*  gsap.registerPlugin(ScrollTrigger);
 
   $(".scroll-section").each(function () {
     const $section = $(this);
@@ -474,10 +475,78 @@ function resetProgressBar(selector) {
 
     initScroll($section[0], $items);
   });
+ */
 
-  /* for parallex  */
+  // Make ScrollTrigger available for use in GSAP animations
+gsap.registerPlugin(ScrollTrigger);
 
-  const lenis = new Lenis({
+// Select the HTML elements needed for the animation
+const scrollSection = document.querySelectorAll(".scroll-section");
+
+scrollSection.forEach((section) => {
+  const wrapper = section.querySelector(".wrapper");
+  const items = wrapper.querySelectorAll(".item");
+
+  // Initialize
+  let direction = null;
+
+  if (section.classList.contains("vertical-section")) {
+    direction = "vertical";
+  } else if (section.classList.contains("horizontal-section")) {
+    direction = "horizontal";
+  }
+
+  initScroll(section, items, direction);
+});
+
+function initScroll(section, items, direction) {
+  // Initial states
+  items.forEach((item, index) => {
+    if (index !== 0) {
+      direction == "horizontal"
+        ? gsap.set(item, { xPercent: 100 })
+        : gsap.set(item, { yPercent: 100 });
+    }
+  });
+
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      pin: true,
+      start: "top top",
+      end: () => `+=${items.length * 100}%`,
+      scrub: 1,
+      invalidateOnRefresh: true,
+      // markers: true,
+    },
+    defaults: { ease: "none" },
+  });
+  items.forEach((item, index) => {
+    timeline.to(item, {
+      scale: 1,
+      borderRadius: "10px",
+    });
+
+    direction == "horizontal"
+      ? timeline.to(
+          items[index + 1],
+          {
+            xPercent: 0,
+          },
+          "<"
+        )
+      : timeline.to(
+          items[index + 1],
+          {
+            yPercent: 0,
+          },
+          "<"
+        );
+  });
+}
+
+
+/*   const lenis = new Lenis({
     smooth: true,
     lerp: 0.04, // lower = smoother (0.05 to 0.1 is ideal)
   });
@@ -556,7 +625,7 @@ function resetProgressBar(selector) {
       );
     });
   }
-
+ */
   /*   function initScroll(section, $items) {
     // Initial state: first item visible, baaki neeche (yPercent: 100)
     $items.each(function (index) {
