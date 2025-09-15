@@ -69,38 +69,41 @@
   });
 
   // Dropdown Toggle
-$(document).ready(function () {
-  // Step 1: Hide all submenus initially
-  $(".responsive-sidebar-submenu").hide();
+  $(document).ready(function () {
+    // Step 1: Hide all submenus initially
+    $(".responsive-sidebar-submenu").hide();
 
-  // Step 2: Toggle submenus on click
-  $(".responsive-sidebar-menu-list").on("click", ".has-dropdown > a", function (e) {
-    e.preventDefault();
+    // Step 2: Toggle submenus on click
+    $(".responsive-sidebar-menu-list").on(
+      "click",
+      ".has-dropdown > a",
+      function (e) {
+        e.preventDefault();
 
-    var $clickedItem = $(this).parent(".has-dropdown");
-    var $submenu = $clickedItem.children(".responsive-sidebar-submenu");
+        var $clickedItem = $(this).parent(".has-dropdown");
+        var $submenu = $clickedItem.children(".responsive-sidebar-submenu");
 
-    // Close other submenus at the same level
-    $clickedItem
-      .siblings(".has-dropdown")
-      .removeClass("open")
-      .children(".responsive-sidebar-submenu")
-      .slideUp();
+        // Close other submenus at the same level
+        $clickedItem
+          .siblings(".has-dropdown")
+          .removeClass("open")
+          .children(".responsive-sidebar-submenu")
+          .slideUp();
 
-    // Also close all nested open submenus inside this clicked item (for clean collapse)
-    $clickedItem
-      .siblings(".has-dropdown")
-      .find(".has-dropdown")
-      .removeClass("open")
-      .children(".responsive-sidebar-submenu")
-      .slideUp();
+        // Also close all nested open submenus inside this clicked item (for clean collapse)
+        $clickedItem
+          .siblings(".has-dropdown")
+          .find(".has-dropdown")
+          .removeClass("open")
+          .children(".responsive-sidebar-submenu")
+          .slideUp();
 
-    // Toggle current submenu
-    $clickedItem.toggleClass("open");
-    $submenu.stop(true, true).slideToggle();
+        // Toggle current submenu
+        $clickedItem.toggleClass("open");
+        $submenu.stop(true, true).slideToggle();
+      }
+    );
   });
-});
-
 
   /* 
     $("#hamburger-toggl").on("click", function () {
@@ -128,7 +131,7 @@ $(document).ready(function () {
     );
   }); */
   /* \\\\\\\\\ */
-/*   $(document).on("click", ".sidebar-menu-show-hide", function () {
+  /*   $(document).on("click", ".sidebar-menu-show-hide", function () {
     $(".responsive__menu").addClass("show");
     $(".menu-overlay").addClass("show");
   });
@@ -172,28 +175,123 @@ $(document).ready(function () {
 
   ///=============  Banner Three Slider myjs  =============\\\
 
+  const progressFill = document.querySelector(".progress-fill");
+  const progressContent = document.querySelector(".autoplay-progress span");
+
   // Award Swiper
+ 
+   let delay = 5000;
+let $awardBarFill = $(".award-bar .progress-bar-fill");
+let $awardBarText = $(".award-bar span");
 
-  let sliderOne = new Swiper(".recentEventsSwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    navigation: {
-      nextEl: ".recent-next",
-      prevEl: ".recent-prev",
+let awardSwiper = new Swiper(".awardSwiper", {
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 30,
+  autoplay: {
+    delay: delay,
+    disableOnInteraction: false
+  },
+  navigation: {
+    nextEl: ".award-next",
+    prevEl: ".award-prev"
+  },
+   on: {
+    slideChangeTransitionStart: function () {
+      resetProgressBar(".award-bar .progress-bar-fill");
     },
+    slideChangeTransitionEnd: function () {
+      startProgressBar(".award-bar .progress-bar-fill", delay);
+    },
+    init: function () {
+      startProgressBar(".award-bar .progress-bar-fill", delay);
+    }
+  }
+/*   on: {
+    autoplayTimeLeft(swiper, time, progress) {
+      $awardBarFill.css("width", `${progress * 100}%`);
+      $awardBarText.text(`${Math.ceil(time / 1000)}s`);
+    }
+  } */
+});
+
+
+  let $recentBarFill = $(".recent-bar .progress-bar-fill");
+let $recentBarText = $(".recent-bar span");
+
+let recentSwiper = new Swiper(".recentEventsSwiper", {
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 30,
+  autoplay: {
+    delay: delay,
+    disableOnInteraction: false
+  },
+  navigation: {
+    nextEl: ".recent-next",
+    prevEl: ".recent-prev"
+  },
+    on: {
+    slideChangeTransitionStart: function () {
+      resetProgressBar(".recent-bar .progress-bar-fill");
+    },
+    slideChangeTransitionEnd: function () {
+      startProgressBar(".recent-bar .progress-bar-fill", delay);
+    },
+    init: function () {
+      startProgressBar(".recent-bar .progress-bar-fill", delay);
+    }
+  }
+/*   on: {
+    autoplayTimeLeft(swiper, time, progress) {
+      $recentBarFill.css("width", `${progress * 100}%`);
+      $recentBarText.text(`${Math.ceil(time / 1000)}s`);
+    }
+  } */
+});
+
+
+function startProgressBar(selector, duration) {
+  const $bar = $(selector);
+  $bar.css({
+    width: "0%",
+    transition: "none"
   });
 
-  let awardSwiper = ".awardSwiper";
-  let sliderTwo = new Swiper(awardSwiper, {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    navigation: {
-      nextEl: ".award-next",
-      prevEl: ".award-prev",
-    },
+  // Force reflow to restart animation
+  void $bar[0].offsetWidth;
+
+  $bar.css({
+    width: "100%",
+    transition: `width ${duration}ms linear`
   });
+}
+
+function resetProgressBar(selector) {
+  const $bar = $(selector);
+  $bar.css({
+    width: "0%",
+    transition: "none"
+  });
+}
+
+    // ✅ Progress Functions
+/*     function startProgress($bar, nextSlideCallback, delay, timerRef) {
+      if (!$bar || $bar.length === 0 || !$bar[0]) {
+        console.warn("Missing progress bar element:", $bar);
+        return;
+      }
+
+      $bar.css({ width: "0%", transition: "none" });
+      void $bar[0].offsetWidth;
+      $bar.css({ transition: `width ${delay}ms linear`, width: "100%" });
+
+      timerRef = setTimeout(nextSlideCallback, delay);
+
+      if ($bar.hasClass("award-bar")) awardTimer = timerRef;
+      if ($bar.hasClass("recent-bar")) recentTimer = timerRef;
+    } */
+
 
   // ✅ Swiper for .heroSwiper (Independent thumbnail/card slider)
   const thumbSwiper = new Swiper(".heroSwiper", {
@@ -304,6 +402,54 @@ $(document).ready(function () {
     mainSwiper.slidePrev(); // ✅ This will auto move thumbSwiper too
   });
 
+  const bannerSlider = new Swiper(".bannerSlider", {
+    loop: true,
+    speed: 5000, // smooth transition
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    effect: "creative",
+    creativeEffect: {
+      limitProgress: 2, // makes transition extend over time
+      perspective: true,
+      prev: {
+        opacity: 0,
+        scale: 1.5,
+        translate: [0, 0, -300],
+      },
+      next: {
+        opacity: 0,
+        scale: 1.5,
+        translate: [0, 0, -300],
+      },
+      current: {
+        opacity: 1,
+        scale: 1,
+        translate: [0, 0, 0],
+      },
+    },
+    pagination: {
+      el: ".hero-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".banner-next",
+      prevEl: ".banner-perv",
+    },
+    thumbs: {
+      swiper: thumbSwiper,
+    },
+    on: {
+      init: function () {
+        updateHeroContent?.(this.realIndex);
+      },
+      slideChange: function () {
+        updateHeroContent?.(this.realIndex);
+      },
+    },
+  });
+
   window.addEventListener("scroll", () => {
     const header = document.querySelector(".header__sticky");
     if (!header) return;
@@ -360,7 +506,7 @@ $(document).ready(function () {
     pinType: document.body.style.transform ? "transform" : "fixed",
   });
 
-  ScrollTrigger.addEventListener("refresh", () => lenis.update());
+  ScrollTrigger.addEventListener("refresh", () => lenis.raf());
   ScrollTrigger.refresh();
 
   function initScroll(section, $items) {
@@ -396,7 +542,7 @@ $(document).ready(function () {
         scale: 1,
         opacity: 0.9,
         duration: 1.3,
-          // filter: "blur(1px)",
+        // filter: "blur(1px)",
       });
 
       timeline.to(

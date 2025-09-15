@@ -998,7 +998,8 @@
 
           <!-- Recents events section start -->
           <div role="listitem" class="item">
-            <section class="services_one recent-events-section pb-5 d-flex align-items-center ">
+            <section
+              class="services_one recent-events-section pb-5 d-flex align-items-center ">
               <div class="container-xxl   ">
                 <div
                   class="services__one-section-title  d-flex justify-content-between mt-4  mb-5">
@@ -1112,6 +1113,12 @@
                       </div>
 
                     </div>
+                    <div class="autoplay-progress recent-bar">
+                      <div class="progress-bar">
+                        <div class="progress-bar-fill"></div>
+                      </div>
+                      <!-- <span></span> -->
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1131,7 +1138,7 @@
                   <!-- <p class="banner-subtitle">Your Subtitle goes here</p> -->
                 </div>
 
-                <div class="swiper heroSwiper2">
+                <div class="swiper bannerSlider">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
                       <img loading="lazy"
@@ -1177,6 +1184,8 @@
                   </div>
                   <div class="overlay"></div>
                   <div class="swiper-pagination  hero-pagination"></div>
+                  <div class="swiper-button-next banner-next"></div>
+                  <div class="swiper-button-prev banner-perv"></div>
                   <!-- <div class="swiper-button-next"></div>
              <div class="swiper-button-prev"></div> -->
                 </div>
@@ -1416,7 +1425,19 @@
                       <!-- Add more slides like above if needed -->
 
                     </div>
+                    <div class="autoplay-progress award-bar">
+                      <div class="progress-bar">
+                        <div class="progress-bar-fill"></div>
+                      </div>
+                      <!-- <span></span> -->
+                    </div>
+
+                    <!-- Just below swiper -->
+                    <!--   <div class="swiper-progress-bar award-bar">
+                      <span class="progress-bar-fill progress-bar"></span>
+                    </div> -->
                   </div>
+
                 </div>
               </div>
             </section>
@@ -1634,7 +1655,7 @@
       src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
     <script
-      src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+      src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.37/dist/lenis.min.js"></script>
 
     <!-- Swiper -->
     <script
