@@ -1439,7 +1439,7 @@ hero-section  CSS
 }
 
 .heroSwiper {
-  width: 56%;
+  width: 50%;
   position: absolute;
   right: 66px;
   /* top: 57%; */
@@ -1529,7 +1529,7 @@ hero-section  CSS
   border: none;
   overflow: hidden;
   background: transparent;
-  height: 284px;
+  height: 250px;
   border-radius: 12px;
 }
 
@@ -1618,7 +1618,7 @@ hero-section  CSS
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(57% + 100px);
+  width: calc(51.25% + 100px);
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -2066,7 +2066,7 @@ About Area One CSS
   left: 40px; /* Adjust horizontal position */
   z-index: 10; 
   color: white;
-  max-width: 530px;
+  max-width: 650px;
 }
 
 .banner-title {
