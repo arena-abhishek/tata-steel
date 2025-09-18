@@ -1709,7 +1709,7 @@ hero-section  CSS
 .banner-section .hero-pagination {
   left: 50% !important;
 }
-.banner-section{
+.banner-section {
   height: 100vh;
 }
 
@@ -1822,7 +1822,6 @@ hero-section  CSS
   background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
 
   background-blend-mode: darken; /* or use multiply, overlay, etc. */
-
 }
 
 .award-section {
@@ -2064,7 +2063,7 @@ About Area One CSS
   position: absolute;
   top: 20%; /* Adjust vertical position */
   left: 40px; /* Adjust horizontal position */
-  z-index: 10; 
+  z-index: 10;
   color: white;
   max-width: 650px;
 }
@@ -2081,4 +2080,3 @@ About Area One CSS
   font-weight: 400;
   margin: 0;
 }
-
