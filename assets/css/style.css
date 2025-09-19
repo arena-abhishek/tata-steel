@@ -7,7 +7,7 @@
 /*==========================================================================
 Google Fonts
 ==========================================================================*/
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Story+Script&display=swap'); */
 /*==========================================================================
 Common CSS
 ==========================================================================*/
@@ -151,7 +151,7 @@ a:hover {
   --primary-text-color: #231f20;
   --secondary-text-color: #58595b;
   --border-color: #ccc;
-  --body-font: "Lato", sans-serif;
+  --body-font:   "Lato", sans-serif;
   --heading-font: "Lato", sans-serif;
   --white: #ffffff;
   --black: #000000;
@@ -240,10 +240,14 @@ h6 {
 
 p {
   font-size: 16px;
+  font-family: var(--heading-font);
   line-height: 1.75;
   padding: 0;
   margin: 0;
   color: var(--p-color);
+}
+span{
+  font-family: var(--heading-font);
 }
 
 .t-left {
@@ -583,7 +587,7 @@ Menu Bar CSS
   /* margin-left: 25px; */
 }
 .header__area-menubar-right-box-sidebar-popup-icon i {
-  font-size: 25px;
+  font-size: 22px;
   display: block;
   line-height: 0;
   color: var(--white);
@@ -900,7 +904,7 @@ Footer  CSS
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay, adjust opacity as needed */
+  background: rgba(0, 0, 0, 0.7); /* Dark overlay, adjust opacity as needed */
   z-index: -1;
 }
 
@@ -2065,7 +2069,8 @@ About Area One CSS
   left: 40px; /* Adjust horizontal position */
   z-index: 10;
   color: white;
-  max-width: 650px;
+  width: 100%;
+  /* max-width: 650px; */
 }
 
 .banner-title {
