@@ -409,12 +409,12 @@ function initScroll(section, items, direction) {
       invalidateOnRefresh: true,
       // markers: true,
     },
-    defaults: { ease: "none" },
+    defaults: { ease: "power2.out" },
   });
   items.forEach((item, index) => {
     timeline.to(item, {
       scale: 1,
-      borderRadius: "10px",
+      // borderRadius: "10px",
     });
 
     direction == "horizontal"
