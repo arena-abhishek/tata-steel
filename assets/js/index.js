@@ -354,6 +354,16 @@ function resetProgressBar(selector) {
       header.classList.remove("glass");
     }
   });
+
+
+
+   ///============= CounterUp =============\\\
+/*   var counter = $(".counter");
+  counter.counterUp({
+    time: 2500,
+    delay: 100,
+  });
+ */
   
 
   // Make ScrollTrigger available for use in GSAP animations
@@ -395,6 +405,7 @@ function initScroll(section, items, direction) {
       start: "top top",
       end: () => `+=${items.length * 100}%`,
       scrub: 1,
+      // snap: 1 / (items.length - 1),
       invalidateOnRefresh: true,
       // markers: true,
     },
@@ -424,13 +435,7 @@ function initScroll(section, items, direction) {
   });
 }
 
-  ///============= CounterUp =============\\\
-  var counter = $(".counter");
-  counter.counterUp({
-    time: 2500,
-    delay: 100,
-  });
-
+ 
 
   
 })(jQuery);

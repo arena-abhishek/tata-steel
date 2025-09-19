@@ -587,7 +587,7 @@ Menu Bar CSS
   /* margin-left: 25px; */
 }
 .header__area-menubar-right-box-sidebar-popup-icon i {
-  font-size: 22px;
+  font-size: 20px;
   display: block;
   line-height: 0;
   color: var(--white);
@@ -1533,7 +1533,7 @@ hero-section  CSS
   border: none;
   overflow: hidden;
   background: transparent;
-  height: 250px;
+  height: 50%;
   border-radius: 12px;
 }
 
