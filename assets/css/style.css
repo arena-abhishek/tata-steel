@@ -890,10 +890,12 @@ Footer  CSS
   position: relative;
   z-index: 1;
   padding-top: 90px;
+  background-color: white;
   background-image: url("../images/sub.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 50px 50px 0px 0px;
   color: white; /* Optional: Text color for visibility */
 }
 
@@ -904,6 +906,7 @@ Footer  CSS
   left: 0;
   width: 100%;
   height: 100%;
+  border-radius: 50px 50px 0px 0px;
   background: rgba(0, 0, 0, 0.7); /* Dark overlay, adjust opacity as needed */
   z-index: -1;
 }
