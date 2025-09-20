@@ -1429,7 +1429,17 @@ hero-section  CSS
 }
 
 /* Large Desktop: width >= 1400px AND height >= 900px */
-@media (min-width: 1400px) and (min-height: 900px) {
+@media (min-width: 1450px) and (min-height: 900px) {
+.hero-navigation{
+  bottom: 17% !important;
+}
+.card{
+  height: 250px !important;
+  /* bottom: 0px !important; */
+}
+.heroSwiper{
+  bottom: 0px !important;
+}
 }
 
 .hero-image {
@@ -1451,7 +1461,7 @@ hero-section  CSS
   right: 66px;
   /* top: 57%; */
   height: max-content;
-  bottom: 0px;
+  bottom: -80px;
   z-index: 4;
 }
 
@@ -1536,7 +1546,7 @@ hero-section  CSS
   border: none;
   overflow: hidden;
   background: transparent;
-  height: 50%;
+  height: 160px;
   border-radius: 12px;
 }
 
@@ -1617,7 +1627,7 @@ hero-section  CSS
 
 .hero-navigation {
   position: absolute;
-  bottom: 17%;
+  bottom: 12%;
   /* top: 130%; */
   /* left: 55px; */
   right: 10px;

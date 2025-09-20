@@ -414,6 +414,7 @@ function initScroll(section, items, direction) {
   items.forEach((item, index) => {
     timeline.to(item, {
       scale: 1,
+       ease: "back.out(1.7)",
       // borderRadius: "10px",
     });
 
