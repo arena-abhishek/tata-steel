@@ -1927,12 +1927,14 @@ About Area One CSS
   transition: 0.4s;
   position: absolute;
   z-index: 4;
-  width: 216px;
-  right: 104px;
+  /* width: 216px;
+  right: 104px; */
+  width: 164px;
+  right: 25px;
   bottom: 11px;
 }
 .about__four-counter .icon {
-  font-size: 60px;
+  font-size: 40px;
   color: var(--primary-color-1);
   margin-bottom: 10px;
 }
@@ -1944,10 +1946,10 @@ About Area One CSS
 }
 .about__four-counter-main .counter {
   margin-bottom: -4px;
-  font-size: 50px;
+  font-size: 30px;
 }
 .about__four-counter-main span {
-  font-size: 50px !important;
+  font-size: 30px !important;
   font-weight: 600;
 }
 
@@ -2053,23 +2055,28 @@ About Area One CSS
 
 /* parallex effect  */
 
-.scroll-section {
-  position: relative;
+
+
+.section {
+  /* position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100vh; */
   overflow: hidden;
 }
 
 .scroll-section .wrapper {
-  height: 100%;
-  width: 100%;
-  position: relative;
+  height: 100vh;
+  /* width: 100%;
+  position: relative; */
 }
 
+.scroll-section .list{
+  position: relative;
+}
 .scroll-section .item {
   position: absolute;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   top: 0;
   left: 0;
   background: white;

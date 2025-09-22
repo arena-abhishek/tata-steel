@@ -366,7 +366,8 @@ function resetProgressBar(selector) {
  */
   
 
-  // Make ScrollTrigger available for use in GSAP animations
+})(jQuery);
+// Make ScrollTrigger available for use in GSAP animations
 gsap.registerPlugin(ScrollTrigger);
 
 // Select the HTML elements needed for the animation
@@ -435,8 +436,3 @@ function initScroll(section, items, direction) {
         );
   });
 }
-
- 
-
-  
-})(jQuery);
