@@ -151,7 +151,7 @@ a:hover {
   --primary-text-color: #231f20;
   --secondary-text-color: #58595b;
   --border-color: #ccc;
-  --body-font:   "Lato", sans-serif;
+  --body-font: "Lato", sans-serif;
   --heading-font: "Lato", sans-serif;
   --white: #ffffff;
   --black: #000000;
@@ -246,7 +246,7 @@ p {
   margin: 0;
   color: var(--p-color);
 }
-span{
+span {
   font-family: var(--heading-font);
 }
 
@@ -1430,16 +1430,16 @@ hero-section  CSS
 
 /* Large Desktop: width >= 1400px AND height >= 900px */
 @media (min-width: 1450px) and (min-height: 900px) {
-.hero-navigation{
-  bottom: 17% !important;
-}
-.card{
-  height: 250px !important;
-  /* bottom: 0px !important; */
-}
-.heroSwiper{
-  bottom: 0px !important;
-}
+  .hero-navigation {
+    bottom: 17% !important;
+  }
+  .card {
+    height: 250px !important;
+    /* bottom: 0px !important; */
+  }
+  .heroSwiper {
+    bottom: 0px !important;
+  }
 }
 
 .hero-image {
@@ -1893,11 +1893,29 @@ About Area One CSS
 }
 .about__four-content h2 {
   text-transform: none;
-  margin-bottom: 25px;
+  margin-top: 25px;
 }
 .about__four-content p {
-  margin-bottom: 25px;
+  width: 100%;
+  /* margin-bottom: 25px; */
+  padding: 0px 20px 0px 0px;
+  text-align: justify;
+  position: relative;
 }
+
+.about__four-content .info {
+  width: 100%;
+  display: block;
+  /* margin-bottom: 30px; */
+  position: relative;
+  top:-95px;
+  color: var(--secondary-text-color);
+}
+.about__four-content a {
+  position: relative;
+  bottom: 80px;
+}
+
 .about__four-content-service {
   display: flex;
   justify-content: space-between;
@@ -1916,6 +1934,16 @@ About Area One CSS
 }
 .about__four-content-service p {
   margin: 0;
+}
+
+.arrow-icons {
+  width: 100%;
+  display: block;
+  position: relative;
+  bottom: 50px;
+}
+.arrow-icons img {
+  width: 100%;
 }
 .about__four-counter {
   display: block;
@@ -2055,8 +2083,6 @@ About Area One CSS
 
 /* parallex effect  */
 
-
-
 .section {
   /* position: relative;
   width: 100%;
@@ -2070,7 +2096,7 @@ About Area One CSS
   position: relative; */
 }
 
-.scroll-section .list{
+.scroll-section .list {
   position: relative;
 }
 .scroll-section .item {
