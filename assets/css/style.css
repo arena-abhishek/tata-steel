@@ -1894,6 +1894,7 @@ About Area One CSS
 .about__four-content h2 {
   text-transform: none;
   margin-top: 25px;
+  margin-bottom: 25px;
 }
 .about__four-content p {
   width: 100%;
