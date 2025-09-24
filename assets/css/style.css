@@ -1902,7 +1902,7 @@ About Area One CSS
   padding: 0px 20px 0px 0px;
   text-align: justify;
   position: relative;
-}
+} 
 
 .about__four-content .info {
   width: 100%;
@@ -1914,7 +1914,19 @@ About Area One CSS
 }
 .about__four-content a {
   position: relative;
-  bottom: 80px;
+  bottom: 100px;
+  right: 100px;
+}
+
+.about__four-content .btn-one{
+  font-size: 18px;
+  border-radius: 10px ;
+  padding: 10px 80px;
+  color: white;
+  background-color: var(--primary-color-1);
+}
+.about__four-content .btn-one::before{
+  border-radius: 8px ;
 }
 
 .about__four-content-service {
@@ -1949,19 +1961,29 @@ About Area One CSS
 .about__four-counter {
   display: block;
   text-align: center;
-  background: #ffffff;
+  background: #d1d3d4;;
   box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-  padding: 16px 20px;
+  border-radius: 5px;
+  /* padding: 16px 20px; */
+  padding: 6px 20px;
   transition: 0.4s;
   position: absolute;
   z-index: 4;
   /* width: 216px;
   right: 104px; */
-  width: 164px;
+ /*  width: 164px;
   right: 25px;
-  bottom: 11px;
+  bottom: 11px; */
+  width: 175px;
+  right: 161px;
+  bottom: -29px;
 }
+
+.about__four-counter .name{
+  font-weight: bolder;
+  font-size: 18px;
+}
+
 .about__four-counter .icon {
   font-size: 40px;
   color: var(--primary-color-1);
