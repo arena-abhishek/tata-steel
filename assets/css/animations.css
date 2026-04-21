@@ -19,64 +19,33 @@
    transform here.
    ---------------------------------------------------------------- */
 @media (min-width: 992px) {
-  /* Outer container: clip cards that are off-screen below */
   .scroll-stack {
+    position: relative;
     overflow: hidden;
   }
 
-  /* Pin target must be exactly viewport height */
-  .scroll-stack .wrapper {
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-  }
-
-  /* List fills the wrapper */
-  .scroll-stack .list {
-    position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
-
-  /* Items stack in place — identical to reference code */
-  .scroll-stack .item,
-  .scroll-stack .scroll-stack__item {
-    position: absolute;
+  .scroll-stack__item {
+    /* position: absolute;
     inset: 0;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-    will-change: transform;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    height: 100vh;
+    will-change: transform; */
+      height: 100vh;
+  width: 100%;
   }
 }
 
-/* ---- TABLET (768-991px) ----------------------------------------
-   No stacking animation. Reset everything. Lightweight fade-in
-   via IntersectionObserver + .in-view class.
-   ---------------------------------------------------------------- */
+ 
+/* ---- TABLET (768–991px) --------------------------------------- */
 @media (min-width: 768px) and (max-width: 991px) {
+ 
   .scroll-stack {
     display: block;
     overflow: visible;
     height: auto !important;
   }
-
-  .scroll-stack .wrapper {
-    height: auto !important;
-    overflow: visible;
-  }
-
-  .scroll-stack .list {
-    position: static;
-    display: block;
-    height: auto;
-  }
-
-  .scroll-stack .item,
-  .scroll-stack .scroll-stack__item {
+ 
+  .scroll-stack__item {
     position: static !important;
     height: auto !important;
     width: 100% !important;
@@ -87,36 +56,22 @@
     animation: fadeSlideUp 0.55s ease forwards;
     animation-play-state: paused;
   }
-
-  .scroll-stack .item.in-view,
-  .scroll-stack .scroll-stack__item.in-view {
+ 
+  .scroll-stack__item.in-view {
     animation-play-state: running;
   }
 }
-
-/* ---- MOBILE (< 768px) ------------------------------------------
-   Zero animation, zero GSAP overhead. Pure natural scroll.
-   ---------------------------------------------------------------- */
+ 
+/* ---- MOBILE (< 768px) ----------------------------------------- */
 @media (max-width: 767px) {
+ 
   .scroll-stack {
     display: block;
     overflow: visible;
     height: auto !important;
   }
-
-  .scroll-stack .wrapper {
-    height: auto !important;
-    overflow: visible;
-  }
-
-  .scroll-stack .list {
-    position: static;
-    display: block;
-    height: auto;
-  }
-
-  .scroll-stack .item,
-  .scroll-stack .scroll-stack__item {
+ 
+  .scroll-stack__item {
     position: static !important;
     height: auto !important;
     width: 100% !important;
@@ -128,22 +83,20 @@
   }
 }
 
-/* ---- Fade-slide keyframes (tablet) ---- */
+/* ---- Keyframes (tablet fade) ---------------------------------- */
 @keyframes fadeSlideUp {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ============================================================
-   REDUCE MOTION — always respect user preference
+   REDUCE MOTION — always respect
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
+  *, *::before, *::after {
+    animation-duration:        0.001ms !important;
+    animation-iteration-count: 1       !important;
+    transition-duration:       0.001ms !important;
+    scroll-behavior:           auto    !important;
   }
 }
