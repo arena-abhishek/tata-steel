@@ -19,19 +19,17 @@
    transform here.
    ---------------------------------------------------------------- */
 @media (min-width: 992px) {
-  .scroll-stack {
+ .scroll-stack {
     position: relative;
+    height: 100vh;
     overflow: hidden;
   }
 
   .scroll-stack__item {
-    /* position: absolute;
+    position: absolute;
     inset: 0;
     width: 100%;
-    height: 100vh;
-    will-change: transform; */
-      height: 100vh;
-  width: 100%;
+    height: 100%;
   }
 }
 

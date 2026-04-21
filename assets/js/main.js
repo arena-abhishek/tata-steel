@@ -34,11 +34,18 @@ function initLazyImages() {
 // 🚀 INIT AFTER FULL PAGE LOAD (IMPORTANT FIX)
 // ─────────────────────────────────────────────
 window.addEventListener("load", () => {
+    // ✅ GSAP GLOBAL SETTINGS (put here)
+  gsap.defaults({
+    ease: "power2.out"
+  });
+
+
   initDataBackgrounds();
   initLazyImages();
 
   initHeader();
   initSliders();
+
 
   // GSAP dependent animations
   // setTimeout(() => {

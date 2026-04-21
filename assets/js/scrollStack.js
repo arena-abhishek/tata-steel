@@ -16,52 +16,57 @@ function runScrollStack() {
 
   if (!container || items.length === 0) return;
 
-  // IMPORTANT RESET
   ScrollTrigger.getAll().forEach(t => t.kill());
 
-  // set stacking
-  items.forEach((item, i) => {
-    gsap.set(item, {
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100vh",
-      zIndex: i
-    });
-
-    if (i !== 0) {
-      gsap.set(item, { yPercent: 100 });
-    }
-  });
-
-  const totalScroll = window.innerHeight * (items.length - 1);
+  const scrollDistance = window.innerHeight * (items.length - 1);
 
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: container,
       start: "top top",
-      end: "+=" + totalScroll,
-      scrub: 1,
+      end: "+=" + scrollDistance,
+      scrub: 1.2,  
+      // scrub: true,
       pin: true,
-      anticipatePin: 1,
-      invalidateOnRefresh: true,
-      markers: true   // 🔥 KEEP THIS FOR DEBUG
+      // markers: true
     }
   });
 
-  items.forEach((item, i) => {
-    if (i < items.length - 1) {
-      tl.to(items[i + 1], {
-        yPercent: 0,
-        ease: "none"
-      });
-    }
-  });
+  // ONLY THIS LOGIC
+items.forEach((item, i) => {
+  if (i === 0) return;
 
+  tl.fromTo(
+    item,
+    {
+      yPercent: 100,
+      scale: 1,
+      opacity: 0,
+      filter: "blur(10px)"
+    },
+    {
+      yPercent: 0,
+      scale: 1,
+      opacity: 1,
+      filter: "blur(0px)",
+      ease: "none"
+    },
+    i - 1
+  );
+
+  tl.to(
+    items[i - 1],
+    {
+      scale: 0.88,
+      opacity: 0.4,
+      filter: "blur(6px)",
+      ease: "none"
+    },
+    i - 1
+  );
+});
   ScrollTrigger.refresh();
 }
-
 // ✅ CLEANUP FIX
 function cleanupForMobile() {
   if (window.ScrollTrigger) {
