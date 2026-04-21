@@ -1,84 +1,142 @@
 /* ============================================================
    CARD STACKING SCROLL ANIMATION
-   Desktop: sections stack on scroll (GSAP pinned)
-   Tablet/Mobile: normal scroll flow
+   ============================================================
+   Desktop  (>= 992px): GSAP pin:true handles ALL positioning.
+                         Do NOT set position / height / z-index /
+                         transform here — those CSS rules conflict
+                         with GSAP's internal measurement pass and
+                         are the root cause of stuck scroll.
+   Tablet (768-991px):  natural scroll + IntersectionObserver fade.
+   Mobile  (< 768px) :  natural scroll, zero animation overhead.
    ============================================================ */
 
-/* ---- DESKTOP (≥ 992px) ---- */
+/* ---- DESKTOP (>= 992px) ----------------------------------------
+   The .wrapper inside each .scroll-stack is the GSAP pin target.
+   It must be exactly 100vh tall so GSAP's spacer is sized correctly.
+   .item uses position:absolute/inset:0 for stacking — identical
+   to the reference code structure. GSAP then sets yPercent/xPercent
+   on each .item at runtime via gsap.set(), so we must NOT pre-assign
+   transform here.
+   ---------------------------------------------------------------- */
 @media (min-width: 992px) {
+  /* Outer container: clip cards that are off-screen below */
   .scroll-stack {
+    overflow: hidden;
+  }
+
+  /* Pin target must be exactly viewport height */
+  .scroll-stack .wrapper {
+    height: 100vh;
+    overflow: hidden;
     position: relative;
   }
 
-  .scroll-stack__item {
-    /* position: absolute; */
-    top: 0;
-    left: 0;
+  /* List fills the wrapper */
+  .scroll-stack .list {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Items stack in place — identical to reference code */
+  .scroll-stack .item,
+  .scroll-stack .scroll-stack__item {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 100vh;
-    will-change: transform, opacity;
-    /* GPU-accelerated */
-    transform: translateZ(0);
+    height: 100%;
+    overflow: hidden;
+    will-change: transform;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
   }
-
-  /* Natural stacking order: first item on top initially */
-  .scroll-stack__item:first-child { z-index: 5; }
-  .scroll-stack__item:nth-child(2){ z-index: 4; }
-  .scroll-stack__item:nth-child(3){ z-index: 3; }
-  .scroll-stack__item:nth-child(4){ z-index: 2; }
-  .scroll-stack__item:nth-child(5){ z-index: 1; }
 }
 
-/* ---- TABLET (768–991px) ---- */
+/* ---- TABLET (768-991px) ----------------------------------------
+   No stacking animation. Reset everything. Lightweight fade-in
+   via IntersectionObserver + .in-view class.
+   ---------------------------------------------------------------- */
 @media (min-width: 768px) and (max-width: 991px) {
-  .scroll-stack { display: block; }
-  .scroll-stack__item {
-    position: static !important;
+  .scroll-stack {
+    display: block;
+    overflow: visible;
     height: auto !important;
-    min-height: auto !important;
-    transform: none !important;
-    opacity: 1 !important;
-    will-change: auto;
   }
 
-  /* Subtle fade-in on scroll for tablet */
-  .scroll-stack__item {
+  .scroll-stack .wrapper {
+    height: auto !important;
+    overflow: visible;
+  }
+
+  .scroll-stack .list {
+    position: static;
+    display: block;
+    height: auto;
+  }
+
+  .scroll-stack .item,
+  .scroll-stack .scroll-stack__item {
+    position: static !important;
+    height: auto !important;
+    width: 100% !important;
+    inset: auto !important;
+    transform: none !important;
+    opacity: 0;
+    will-change: auto;
     animation: fadeSlideUp 0.55s ease forwards;
     animation-play-state: paused;
   }
-  .scroll-stack__item.in-view {
+
+  .scroll-stack .item.in-view,
+  .scroll-stack .scroll-stack__item.in-view {
     animation-play-state: running;
   }
 }
 
-/* ---- MOBILE (< 768px) ---- */
+/* ---- MOBILE (< 768px) ------------------------------------------
+   Zero animation, zero GSAP overhead. Pure natural scroll.
+   ---------------------------------------------------------------- */
 @media (max-width: 767px) {
-  .scroll-stack { display: block; }
-  .scroll-stack__item {
+  .scroll-stack {
+    display: block;
+    overflow: visible;
+    height: auto !important;
+  }
+
+  .scroll-stack .wrapper {
+    height: auto !important;
+    overflow: visible;
+  }
+
+  .scroll-stack .list {
+    position: static;
+    display: block;
+    height: auto;
+  }
+
+  .scroll-stack .item,
+  .scroll-stack .scroll-stack__item {
     position: static !important;
     height: auto !important;
-    min-height: auto !important;
+    width: 100% !important;
+    inset: auto !important;
     transform: none !important;
     opacity: 1 !important;
     will-change: auto;
-    /* No animations on mobile — performance first */
+    animation: none !important;
   }
 }
 
+/* ---- Fade-slide keyframes (tablet) ---- */
 @keyframes fadeSlideUp {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ============================================================
-   ANIMATION HELPERS
+   REDUCE MOTION — always respect user preference
    ============================================================ */
-
-/* Blob + float already in sections.css */
-
-/* Reduce-motion: respect user preference */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -86,5 +144,6 @@
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
