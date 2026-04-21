@@ -1,162 +1,826 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming Soon | Tata Steel UISL</title>
-  <meta name="description" content="This page is coming soon. Tata Steel Utilities and Infrastructure Services Limited.">
-  <meta name="robots" content="noindex, nofollow">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon | Tata Steel UISL</title>
+    <meta
+      name="description"
+      content="This page is coming soon. Tata Steel Utilities and Infrastructure Services Limited."
+    />
+    <meta name="robots" content="noindex, nofollow" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+    />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+        <!-- Fonts (preloaded) -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900&display=swap"
+      />
+    </noscript>
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --primary: #1072b8;
-      --primary-dark: #0c548a;
-      --white: #ffffff;
-    }
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
 
-    body {
-      font-family: 'Lato', sans-serif;
-      background: linear-gradient(135deg, #07233c 0%, #0c548a 50%, #1072b8 100%);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-      color: #fff;
-    }
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
-    .logo-wrap {
-      margin-bottom: 64px;
-    }
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
 
-    .logo-wrap img {
-      height: 60px;
-      width: auto;
-      filter: brightness(0) invert(1);
-    }
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-    .icon-wrap {
-      font-size: 4rem;
-      color: rgba(255,255,255,0.2);
-      margin-bottom: 24px;
-    }
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
 
-    h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      margin-bottom: 16px;
-      line-height: 1.1;
-    }
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --primary: #1072b8;
+        --primary-dark: #0c548a;
+        --white: #ffffff;
+      }
 
-    h1 span {
-      display: block;
-      font-weight: 300;
-      font-size: 0.5em;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.6);
-      margin-bottom: 8px;
-    }
+      body {
+        font-family: "Lato", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #07233c 0%,
+          #0c548a 50%,
+          #1072b8 100%
+        );
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        /* padding: 40px 20px; */
+        color: #fff;
+      }
+      main {
+        max-width: 800px;
+        padding: 40px 20px;
+      }
 
-    p.sub {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.62);
-      max-width: 400px;
-      line-height: 1.7;
-      margin: 0 auto 48px;
-    }
+      .logo-wrap {
+        margin-bottom: 64px;
+      }
 
-    a.back-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.22);
-      padding: 12px 28px;
-      border-radius: 50px;
-      transition: background 0.25s, color 0.25s;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
+      .logo-wrap img {
+        height: 60px;
+        width: auto;
+        filter: brightness(0) invert(1);
+      }
 
-    a.back-btn:hover {
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      border-color: rgba(255,255,255,0.45);
-    }
+      .icon-wrap {
+        font-size: 4rem;
+        color: rgba(255, 255, 255, 0.2);
+        margin-bottom: 24px;
+      }
 
-    /* Pulsing dots decoration */
-    .dots {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
+      h1 {
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        margin-bottom: 16px;
+        line-height: 1.1;
+      }
 
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.4);
-      animation: pulse 1.4s ease-in-out infinite;
-    }
+      h1 span {
+        display: block;
+        font-weight: 300;
+        font-size: 0.5em;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 8px;
+      }
 
-    .dot:nth-child(1) { animation-delay: 0s; }
-    .dot:nth-child(2) { animation-delay: 0.2s; }
-    .dot:nth-child(3) { animation-delay: 0.4s; }
+      p.sub {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.62);
+        max-width: 400px;
+        line-height: 1.7;
+        margin: 0 auto 48px;
+      }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1);   opacity: 0.4; }
-      50%       { transform: scale(1.4); opacity: 1;   }
-    }
-  </style>
-</head>
+      a.back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        padding: 12px 28px;
+        border-radius: 50px;
+        transition:
+          background 0.25s,
+          color 0.25s;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
 
-<body>
-  <div class="logo-wrap">
-    <img src="../assets/images/logo.webp" alt="Tata Steel UISL Logo" loading="eager">
+      a.back-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.45);
+      }
+
+      /* Pulsing dots decoration */
+      .dots {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        animation: pulse 1.4s ease-in-out infinite;
+      }
+
+      .dot:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .dot:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .dot:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.4;
+        }
+        50% {
+          transform: scale(1.4);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ════════════════════════════════════════════════════════
+       HEADER
+       ════════════════════════════════════════════════════════ -->
+    <header class="site-header site-header--transparent" role="banner">
+      <div class="container-xxl">
+        <div class="header-inner">
+          <!-- Desktop logo -->
+          <a
+            href="index.html"
+            class="site-logo d-none d-lg-flex"
+            aria-label="Tata Steel UISL – Homepage"
+          >
+            <img
+              src="../assets/images/logo-22.webp"
+              alt="Tata Steel Utilities and Infrastructure Services Limited"
+              class="site-logo__full"
+              width="736"
+              height="120"
+              loading="eager"
+              decoding="async"
+            />
+          </a>
+
+          <!-- Mobile logo -->
+          <a
+            href="index.html"
+            class="site-logo d-flex d-lg-none"
+            aria-label="Tata Steel UISL – Homepage"
+          >
+            <img
+              src="../assets/images/logo.webp"
+              alt="Tata Steel UISL"
+              class="site-logo__icon"
+              width="70"
+              height="70"
+              loading="eager"
+              decoding="async"
+            />
+          </a>
+
+          <div class="header-actions">
+            <!-- Search -->
+            <button
+              class="header-search-toggle d-none d-lg-flex"
+              type="button"
+              aria-label="Open search"
+              aria-expanded="false"
+              aria-controls="search-overlay"
+            >
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+
+            <!-- Desktop menu toggle -->
+            <button
+              class="header-menu-toggle d-none d-lg-flex"
+              type="button"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="responsive-nav"
+            >
+              <i class="fa fa-bars" aria-hidden="true"></i>
+              <span>Menu</span>
+            </button>
+
+            <!-- ADD: Tata logo on far right -->
+            <a
+              href="/"
+              class="header-tata-logo d-none d-lg-flex"
+              target="_blank"
+              rel="noopener"
+              aria-label="Tata Group website"
+            >
+              <img
+                src="../assets/images/logo.webp"
+                alt="Tata"
+                height="44"
+                width="44"
+              />
+            </a>
+
+            <!-- Mobile hamburger -->
+            <button
+              class="header-hamburger d-flex d-lg-none"
+              type="button"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="responsive-nav"
+            >
+              <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+      <!-- Search overlay -->
+    <div
+      id="search-overlay"
+      class="search-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Site search"
+      aria-hidden="true"
+    >
+      <button
+        class="search-overlay__close"
+        type="button"
+        aria-label="Close search"
+      >
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </button>
+      <form class="search-overlay__form" role="search" action="#" method="get">
+        <label for="site-search" class="visually-hidden">Search</label>
+        <input
+          id="site-search"
+          class="search-overlay__input"
+          type="search"
+          name="q"
+          placeholder="Search Tata Steel UISL…"
+          autocomplete="off"
+        />
+        <button
+          class="search-overlay__submit"
+          type="submit"
+          aria-label="Submit search"
+        >
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- Nav overlay backdrop -->
+    <div class="nav-overlay" aria-hidden="true"></div>
+
+    <!-- Responsive navigation -->
+    <nav
+      id="responsive-nav"
+      class="responsive-nav"
+      aria-label="Primary Navigation"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="responsive-nav__header">
+        <a href="index.html" aria-label="Homepage">
+          <img
+            src="assets/images/logo.webp"
+            alt="Tata Steel UISL"
+            class="responsive-nav__logo"
+            loading="lazy"
+          />
+        </a>
+        <button
+          class="responsive-nav__close"
+          type="button"
+          aria-label="Close navigation"
+        >
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <ul class="nav-menu" role="menubar">
+        <li class="nav-menu__item" role="none">
+          <button
+            class="nav-menu__link nav-menu__link--has-children"
+            aria-expanded="false"
+            aria-haspopup="true"
+            role="menuitem"
+            type="button"
+          >
+            About Us
+            <i
+              class="fa fa-chevron-down nav-menu__chevron"
+              aria-hidden="true"
+            ></i>
+          </button>
+          <ul class="nav-submenu" aria-label="About Us">
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >About UISL</a
+              >
+            </li>
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Our History</a
+              >
+            </li>
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Leadership Team</a
+              >
+            </li>
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Jamshedpur City</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-menu__item" role="none">
+          <button
+            class="nav-menu__link nav-menu__link--has-children"
+            aria-expanded="false"
+            aria-haspopup="true"
+            role="menuitem"
+            type="button"
+          >
+            Our Commitments
+            <i
+              class="fa fa-chevron-down nav-menu__chevron"
+              aria-hidden="true"
+            ></i>
+          </button>
+          <ul class="nav-submenu" aria-label="Our Commitments">
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Vision &amp; Mission</a
+              >
+            </li>
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Values</a
+              >
+            </li>
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >CSR Initiatives</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-menu__item" role="none">
+          <button
+            class="nav-menu__link nav-menu__link--has-children"
+            aria-expanded="false"
+            aria-haspopup="true"
+            role="menuitem"
+            type="button"
+          >
+            Businesses
+            <i
+              class="fa fa-chevron-down nav-menu__chevron"
+              aria-hidden="true"
+            ></i>
+          </button>
+          <ul class="nav-submenu" aria-label="Businesses">
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Integrated Town O&amp;M</a
+              >
+            </li>
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Industrial Services</a
+              >
+            </li>
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Water &amp; Wastewater</a
+              >
+            </li>
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Power Distribution</a
+              >
+            </li>
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >EPC Services</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-menu__item" role="none">
+          <button
+            class="nav-menu__link nav-menu__link--has-children"
+            aria-expanded="false"
+            aria-haspopup="true"
+            role="menuitem"
+            type="button"
+          >
+            Career
+            <i
+              class="fa fa-chevron-down nav-menu__chevron"
+              aria-hidden="true"
+            ></i>
+          </button>
+          <ul class="nav-submenu" aria-label="Career">
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Current Openings</a
+              >
+            </li>
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Life at UISL</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-menu__item" role="none">
+          <button
+            class="nav-menu__link nav-menu__link--has-children"
+            aria-expanded="false"
+            aria-haspopup="true"
+            role="menuitem"
+            type="button"
+          >
+            Safety &amp; Sustainability
+            <i
+              class="fa fa-chevron-down nav-menu__chevron"
+              aria-hidden="true"
+            ></i>
+          </button>
+          <ul class="nav-submenu" aria-label="Safety and Sustainability">
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Safety Policy</a
+              >
+            </li>
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Sustainability Report</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-menu__item" role="none">
+          <button
+            class="nav-menu__link nav-menu__link--has-children"
+            aria-expanded="false"
+            aria-haspopup="true"
+            role="menuitem"
+            type="button"
+          >
+            Media Center
+            <i
+              class="fa fa-chevron-down nav-menu__chevron"
+              aria-hidden="true"
+            ></i>
+          </button>
+          <ul class="nav-submenu" aria-label="Media Center">
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >News &amp; Press</a
+              >
+            </li>
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Photo Gallery</a
+              >
+            </li>
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Video Gallery</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-menu__item" role="none">
+          <button
+            class="nav-menu__link nav-menu__link--has-children"
+            aria-expanded="false"
+            aria-haspopup="true"
+            role="menuitem"
+            type="button"
+          >
+            Vendor Partners
+            <i
+              class="fa fa-chevron-down nav-menu__chevron"
+              aria-hidden="true"
+            ></i>
+          </button>
+          <ul class="nav-submenu" aria-label="Vendor Partners">
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Contractor Registration</a
+              >
+            </li>
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >E-Procurement</a
+              >
+            </li>
+            <li class="nav-submenu__item">
+              <a
+                href="pages/coming-soon.html"
+                class="nav-submenu__link"
+                role="menuitem"
+                >Supplier Registration</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-menu__item" role="none">
+          <a
+            href="pages/coming-soon.html"
+            class="nav-menu__link"
+            role="menuitem"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <main >
+      <!-- <div class="logo-wrap">
+        <img
+          src="../assets/images/logo.webp"
+          alt="Tata Steel UISL Logo"
+          loading="eager"
+        />
+      </div> -->
+
+      <div class="icon-wrap" aria-hidden="true">
+        <i class="fa fa-tools"></i>
+      </div>
+
+      <h1>
+        <span>Page</span>
+        Coming Soon
+      </h1>
+
+      <p class="sub">
+        We're working hard to bring you this page. Check back soon for more
+        content.
+      </p>
+
+      <div class="dots" aria-hidden="true">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+
+      <a href="../index.html" class="back-btn">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        Back to Homepage
+      </a>
+    </main>
+   <footer class="container-fluid site-footer" role="contentinfo">
+  <div class="footer-body">
+    <div class="container-xxl">
+      <div class="footer-grid">
+
+        <div class="footer-widget">
+          <a
+            href="index.html"
+            class="d-inline-block mb-4"
+            aria-label="Homepage"
+          >
+            <img
+              src="../assets/images/logo.webp"
+              alt="Tata Steel UISL"
+              height="60"
+              loading="lazy"
+            />
+          </a>
+
+          <p class="footer-about__desc">
+            The Tata group comprises over 100 operating companies across
+            seven business sectors, with operations in more than 80
+            countries. UISL is committed to building a cleaner, greener, and
+            more resilient tomorrow.
+          </p>
+        </div>
+
+        <!-- RELATED LINKS -->
+        <div class="footer-widget">
+          <h3 class="footer-widget__title">
+            Related Links
+            <span class="heading-line heading-line--white"></span>
+          </h3>
+
+          <ul class="footer-links">
+            <li><a href="pages/coming-soon.html">Tata Group</a></li>
+            <li><a href="pages/coming-soon.html">Tata Steel</a></li>
+            <li><a href="pages/coming-soon.html">Water Savings Tips</a></li>
+            <li><a href="pages/coming-soon.html">Energy Savings Tips</a></li>
+            <li><a href="pages/coming-soon.html">Career</a></li>
+          </ul>
+        </div>
+
+        <!-- VENDOR -->
+        <div class="footer-widget">
+          <h3 class="footer-widget__title">
+            Vendor Partners
+            <span class="heading-line heading-line--white"></span>
+          </h3>
+
+          <ul class="footer-links">
+            <li><a href="pages/coming-soon.html">Contractor Registration</a></li>
+            <li><a href="pages/coming-soon.html">E-Procurement / JMR</a></li>
+            <li><a href="pages/coming-soon.html">Supplier Registration</a></li>
+            <li><a href="pages/coming-soon.html">ROW Management</a></li>
+            <li><a href="pages/coming-soon.html">Notice to Vendors</a></li>
+          </ul>
+        </div>
+
+        <!-- BUSINESSES -->
+        <div class="footer-widget">
+          <h3 class="footer-widget__title">
+            Businesses
+            <span class="heading-line heading-line--white"></span>
+          </h3>
+
+          <ul class="footer-links">
+            <li><a href="pages/coming-soon.html">Integrated Town O&M</a></li>
+            <li><a href="pages/coming-soon.html">Industrial Services</a></li>
+            <li><a href="pages/coming-soon.html">Water & Wastewater</a></li>
+            <li><a href="pages/coming-soon.html">Power Distribution</a></li>
+            <li><a href="pages/coming-soon.html">EPC Services</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
   </div>
 
-  <div class="icon-wrap" aria-hidden="true">
-    <i class="fa fa-tools"></i>
+  <!-- FOOTER BOTTOM -->
+  <div class="footer-bottom">
+    <div class="container-xxl">
+      <div class="footer-bottom__inner">
+        <nav class="footer-legal-links" aria-label="Legal and policy links">
+
+          <a href="pages/coming-soon.html">Disclaimer</a>
+          <span class="divider">|</span>
+
+          <a href="pages/coming-soon.html">Privacy Notice</a>
+          <span class="divider">|</span>
+
+          <a href="pages/coming-soon.html">Refund & Cancellation</a>
+          <span class="divider">|</span>
+
+          <a href="pages/coming-soon.html">Sitemap</a>
+
+        </nav>
+      </div>
+    </div>
   </div>
-
-  <h1>
-    <span>Page</span>
-    Coming Soon
-  </h1>
-
-  <p class="sub">
-    We're working hard to bring you this page. Check back soon for more content.
-  </p>
-
-  <div class="dots" aria-hidden="true">
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-  </div>
-
-  <a href="../index.html" class="back-btn">
-    <i class="fa fa-arrow-left" aria-hidden="true"></i>
-    Back to Homepage
-  </a>
-</body>
+</footer>
+  </body>
 </html>
