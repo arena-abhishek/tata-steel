@@ -9,8 +9,69 @@
     );
   });
 
+///=============  Responsive Menu (CSS-ALIGNED & SMOOTH)  =============\\\
+$(document).ready(function () {
+  // ===== OPEN MENU =====
+  $("#hamburger-toggl, #hamburger-toggle").on("click", function () {
+    $(".responsive__menu").addClass("show");
+    $(".menu-overlay").addClass("active");
+    $(this).attr("aria-expanded", "true");
+  });
 
-  ///=============  Responsive Menu  =============\\\
+  // ===== CLOSE MENU =====
+  $(".close-hide-show, .menu-overlay").on("click", function () {
+    $(".responsive__menu").removeClass("show");
+    $(".menu-overlay").removeClass("active");
+    $("#hamburger-toggl, #hamburger-toggle").attr("aria-expanded", "false");
+
+    // close all dropdowns
+    $(".responsive-sidebar-menu-list__item.has-dropdown").removeClass("active");
+    $(".responsive-sidebar-submenu").slideUp(200).attr("aria-hidden", "true");
+  });
+
+  // ===== DROPDOWN CLICK =====
+  $(".responsive-sidebar-menu-list").on(
+    "click",
+    ".has-dropdown > a",
+    function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      var $parentLi = $(this).parent(".has-dropdown");
+      var $submenu = $parentLi.children(".responsive-sidebar-submenu");
+
+      if ($parentLi.hasClass("active")) {
+        // close
+        $parentLi.removeClass("active");
+        $submenu.slideUp(200).attr("aria-hidden", "true");
+      } else {
+        // close other siblings at same level
+        $parentLi
+          .siblings(".has-dropdown")
+          .removeClass("active")
+          .children(".responsive-sidebar-submenu")
+          .slideUp(200)
+          .attr("aria-hidden", "true");
+
+        // open current
+        $parentLi.addClass("active");
+        $submenu.slideDown(200).attr("aria-hidden", "false");
+      }
+    }
+  );
+
+  // ===== All links open in new tab (except #) =====
+  $(".responsive-sidebar-menu-list a").each(function () {
+    var href = $(this).attr("href");
+    if (href && href !== "#") {
+      $(this).attr({ target: "_blank", rel: "noopener noreferrer" });
+    }
+  });
+});
+
+
+
+/*   ///=============  Responsive Menu  =============\\\
 
   // Open Menu
   $(document).on("click", "#hamburger-toggl, #hamburger-toggle", function () {
@@ -61,7 +122,7 @@
     );
   });
 
-
+ */
 
   ///=============  Banner Three Slider myjs  =============\\\
 
@@ -367,8 +428,86 @@ function resetProgressBar(selector) {
   
 
 })(jQuery);
-// Make ScrollTrigger available for use in GSAP animations
+
 gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.matchMedia({
+  // Desktop only (animations active)
+  "(min-width: 768px)": function () {
+    const scrollSections = document.querySelectorAll(".scroll-section");
+
+    scrollSections.forEach((section) => {
+      const wrapper = section.querySelector(".wrapper");
+      const items = wrapper.querySelectorAll(".item");
+
+      let direction = null;
+      if (section.classList.contains("vertical-section")) {
+        direction = "vertical";
+      } else if (section.classList.contains("horizontal-section")) {
+        direction = "horizontal";
+      }
+
+      initScroll(section, items, direction);
+    });
+
+    function initScroll(section, items, direction) {
+      // Set up initial positions
+      items.forEach((item, index) => {
+        if (index !== 0) {
+          direction === "horizontal"
+            ? gsap.set(item, { xPercent: 100 })
+            : gsap.set(item, { yPercent: 100 });
+        }
+      });
+
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          pin: true,
+          start: "top top",
+          end: () => `+=${items.length * 100}%`,
+          scrub: 3,
+          // markers: true,
+        },
+        defaults: { ease: "power2.out" },
+      });
+
+      items.forEach((item, index) => {
+        if (index < items.length - 1) {
+          timeline.to(item, { scale: 1, ease: "back.out(1.7)" });
+          direction === "horizontal"
+            ? timeline.to(items[index + 1], { xPercent: 0 }, "<")
+            : timeline.to(items[index + 1], { yPercent: 0 }, "<");
+        }
+      });
+    }
+  },
+
+  // Mobile: disable animations and revert layout
+  "(max-width: 575px)": function () {
+    // Kill any active ScrollTriggers
+    ScrollTrigger.getAll().forEach((st) => st.kill());
+
+    // Reset transforms and pinned layout
+    gsap.set(".scroll-section .item", {
+      clearProps: "all", // removes inline transforms, scales, etc.
+    });
+    gsap.set(".scroll-section .wrapper", {
+      clearProps: "all",
+    });
+
+    // Remove pinning effects (some CSS from GSAP may remain)
+    document.querySelectorAll(".scroll-section").forEach((section) => {
+      section.style.position = "relative";
+      section.style.height = "auto";
+      section.style.overflow = "visible";
+    });
+  },
+});
+
+
+// Make ScrollTrigger available for use in GSAP animations
+/* gsap.registerPlugin(ScrollTrigger);
 
 // Select the HTML elements needed for the animation
 const scrollSection = document.querySelectorAll(".scroll-section");
@@ -436,3 +575,4 @@ function initScroll(section, items, direction) {
         );
   });
 }
+ */

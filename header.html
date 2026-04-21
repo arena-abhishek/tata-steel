@@ -1,0 +1,256 @@
+<!--
+  components/header.html
+  Reusable header component.
+  Include via server-side template, SSI, or JS fetch.
+  ============================================================ -->
+<header class="site-header site-header--transparent" role="banner">
+  <div class="container-xxl">
+    <div class="header-inner">
+
+      <!-- ── Logo (desktop full-width) ── -->
+      <a href="index.html" class="site-logo d-none d-lg-flex" aria-label="Tata Steel UISL – Go to homepage">
+        <img
+          src="assets/images/logo-22.webp"
+          alt="Tata Steel Utilities and Infrastructure Services Limited Logo"
+          class="site-logo__full"
+          width="736" height="120"
+          loading="eager"
+          decoding="async">
+      </a>
+
+      <!-- ── Logo (mobile icon) ── -->
+      <a href="index.html" class="site-logo d-flex d-lg-none" aria-label="Tata Steel UISL – Go to homepage">
+        <img
+          src="assets/images/logo.webp"
+          alt="Tata Steel UISL Logo"
+          class="site-logo__icon"
+          width="70" height="70"
+          loading="eager"
+          decoding="async">
+      </a>
+
+      <!-- ── Actions ── -->
+      <div class="header-actions">
+
+        <!-- Search (desktop) -->
+        <button
+          class="header-search-toggle d-none d-lg-flex"
+          aria-label="Open site search"
+          aria-expanded="false"
+          aria-controls="search-overlay"
+          type="button">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+
+        <!-- Menu toggle (desktop) -->
+        <button
+          class="header-menu-toggle d-none d-lg-flex"
+          id="desktop-menu-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="responsive-nav"
+          type="button">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+          <span>Menu</span>
+        </button>
+
+        <!-- Hamburger (mobile) -->
+        <button
+          class="header-hamburger d-flex d-lg-none"
+          id="mobile-hamburger"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="responsive-nav"
+          type="button">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── Search Overlay ── -->
+<div
+  id="search-overlay"
+  class="search-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Site search"
+  aria-hidden="true">
+
+  <button class="search-overlay__close" aria-label="Close search" type="button">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </button>
+
+  <form class="search-overlay__form" role="search">
+    <label for="site-search" class="visually-hidden">Search</label>
+    <input
+      id="site-search"
+      class="search-overlay__input"
+      type="search"
+      name="q"
+      placeholder="Search Tata Steel UISL…"
+      autocomplete="off">
+    <button class="search-overlay__submit" type="submit" aria-label="Submit search">
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </button>
+  </form>
+</div>
+
+<!-- ── Nav Overlay ── -->
+<div class="nav-overlay" aria-hidden="true" id="nav-overlay"></div>
+
+<!-- ── Responsive Navigation ── -->
+<nav
+  id="responsive-nav"
+  class="responsive-nav"
+  aria-label="Primary Navigation"
+  role="dialog"
+  aria-modal="true">
+
+  <!-- Nav header -->
+  <div class="responsive-nav__header">
+    <a href="index.html" aria-label="Homepage">
+      <img src="assets/images/logo.webp" alt="Tata Steel UISL" class="responsive-nav__logo" loading="lazy">
+    </a>
+    <button
+      class="responsive-nav__close"
+      aria-label="Close navigation menu"
+      type="button">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <!-- Navigation items -->
+  <ul class="nav-menu" role="menubar">
+
+    <!-- About Us -->
+    <li class="nav-menu__item" role="none">
+      <button
+        class="nav-menu__link nav-menu__link--has-children"
+        aria-expanded="false"
+        aria-haspopup="true"
+        role="menuitem">
+        About Us
+        <i class="fa fa-chevron-down nav-menu__chevron" aria-hidden="true"></i>
+      </button>
+      <ul class="nav-submenu" role="menu" aria-label="About Us submenu">
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">About UISL</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Our History</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Leadership Team</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Jamshedpur City</a></li>
+      </ul>
+    </li>
+
+    <!-- Our Commitments -->
+    <li class="nav-menu__item" role="none">
+      <button
+        class="nav-menu__link nav-menu__link--has-children"
+        aria-expanded="false"
+        aria-haspopup="true"
+        role="menuitem">
+        Our Commitments
+        <i class="fa fa-chevron-down nav-menu__chevron" aria-hidden="true"></i>
+      </button>
+      <ul class="nav-submenu" role="menu" aria-label="Our Commitments submenu">
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Vision &amp; Mission</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Values</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">CSR Initiatives</a></li>
+      </ul>
+    </li>
+
+    <!-- Businesses -->
+    <li class="nav-menu__item" role="none">
+      <button
+        class="nav-menu__link nav-menu__link--has-children"
+        aria-expanded="false"
+        aria-haspopup="true"
+        role="menuitem">
+        Businesses
+        <i class="fa fa-chevron-down nav-menu__chevron" aria-hidden="true"></i>
+      </button>
+      <ul class="nav-submenu" role="menu" aria-label="Businesses submenu">
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Integrated Town O&amp;M</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Industrial Services</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Water &amp; Wastewater</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Power Distribution</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">EPC Services</a></li>
+      </ul>
+    </li>
+
+    <!-- Career -->
+    <li class="nav-menu__item" role="none">
+      <button
+        class="nav-menu__link nav-menu__link--has-children"
+        aria-expanded="false"
+        aria-haspopup="true"
+        role="menuitem">
+        Career
+        <i class="fa fa-chevron-down nav-menu__chevron" aria-hidden="true"></i>
+      </button>
+      <ul class="nav-submenu" role="menu" aria-label="Career submenu">
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Current Openings</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Life at UISL</a></li>
+      </ul>
+    </li>
+
+    <!-- Safety & Sustainability -->
+    <li class="nav-menu__item" role="none">
+      <button
+        class="nav-menu__link nav-menu__link--has-children"
+        aria-expanded="false"
+        aria-haspopup="true"
+        role="menuitem">
+        Safety &amp; Sustainability
+        <i class="fa fa-chevron-down nav-menu__chevron" aria-hidden="true"></i>
+      </button>
+      <ul class="nav-submenu" role="menu" aria-label="Safety and Sustainability submenu">
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Safety Policy</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Sustainability Report</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Environmental Initiatives</a></li>
+      </ul>
+    </li>
+
+    <!-- Media Center -->
+    <li class="nav-menu__item" role="none">
+      <button
+        class="nav-menu__link nav-menu__link--has-children"
+        aria-expanded="false"
+        aria-haspopup="true"
+        role="menuitem">
+        Media Center
+        <i class="fa fa-chevron-down nav-menu__chevron" aria-hidden="true"></i>
+      </button>
+      <ul class="nav-submenu" role="menu" aria-label="Media Center submenu">
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">News &amp; Press</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Photo Gallery</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Video Gallery</a></li>
+      </ul>
+    </li>
+
+    <!-- Vendor Partners -->
+    <li class="nav-menu__item" role="none">
+      <button
+        class="nav-menu__link nav-menu__link--has-children"
+        aria-expanded="false"
+        aria-haspopup="true"
+        role="menuitem">
+        Vendor Partners
+        <i class="fa fa-chevron-down nav-menu__chevron" aria-hidden="true"></i>
+      </button>
+      <ul class="nav-submenu" role="menu" aria-label="Vendor Partners submenu">
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Contractor Registration</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">E-Procurement</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Supplier Registration</a></li>
+        <li class="nav-submenu__item" role="none"><a href="pages/coming-soon.html" class="nav-submenu__link" role="menuitem">Notice to Vendors</a></li>
+      </ul>
+    </li>
+
+    <!-- Contact -->
+    <li class="nav-menu__item" role="none">
+      <a href="pages/coming-soon.html" class="nav-menu__link" role="menuitem">Contact Us</a>
+    </li>
+
+  </ul>
+</nav>

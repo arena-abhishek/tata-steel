@@ -1,0 +1,170 @@
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn-primary-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px var(--space-7);
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--transition-base),
+              color var(--transition-base),
+              transform var(--transition-fast),
+              box-shadow var(--transition-fast);
+  z-index: 1;
+}
+
+.btn-primary-custom::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-primary-dark);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+  z-index: -1;
+}
+
+.btn-primary-custom:hover,
+.btn-primary-custom:focus-visible {
+  color: var(--color-white);
+  box-shadow: 0 4px 16px rgba(16,114,184,0.3);
+  transform: translateY(-2px);
+}
+.btn-primary-custom:hover::before { transform: scaleX(1); }
+.btn-primary-custom:active        { transform: translateY(0); }
+
+/* Ghost / outline variant */
+.btn-outline-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px var(--space-6);
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  border-radius: var(--radius-pill);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--transition-base),
+              color var(--transition-base),
+              transform var(--transition-fast);
+  z-index: 1;
+}
+
+.btn-outline-custom::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-white);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+  z-index: -1;
+}
+
+.btn-outline-custom:hover,
+.btn-outline-custom:focus-visible {
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+.btn-outline-custom:hover::before { transform: scaleX(1); }
+
+/* Icon arrow helper */
+.btn-icon {
+  transition: transform var(--transition-fast);
+}
+.btn-primary-custom:hover .btn-icon,
+.btn-outline-custom:hover .btn-icon {
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   SWIPER CUSTOM NAVIGATION BUTTONS
+   ============================================================ */
+.swiper-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.4);
+  color: var(--color-white);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background var(--transition-fast),
+              border-color var(--transition-fast),
+              transform var(--transition-fast);
+}
+
+.swiper-nav-btn:hover,
+.swiper-nav-btn:focus-visible {
+  background: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-white);
+  transform: scale(1.08);
+}
+
+.swiper-nav-btn.dark {
+  background: rgba(0,0,0,0.08);
+  border-color: rgba(0,0,0,0.15);
+  color: var(--color-gray-700);
+}
+.swiper-nav-btn.dark:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+/* ============================================================
+   PROGRESS BAR (autoplay)
+   ============================================================ */
+.autoplay-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  z-index: 10;
+}
+
+.autoplay-progress-bar__fill {
+  height: 100%;
+  width: 0%;
+  background: var(--color-white);
+  border-radius: 2px;
+  transition: none;
+}
+
+/* ============================================================
+   OVERLAY HELPERS
+   ============================================================ */
+.overlay-dark {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-dark);
+  pointer-events: none;
+}
+
+.overlay-gradient-bottom {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);
+  pointer-events: none;
+}

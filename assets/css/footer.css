@@ -1,0 +1,160 @@
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  position: relative;
+  background: var(--color-gray-700);
+  color: var(--color-white);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/sub.webp');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0,0,0,0.78);
+  background-blend-mode: multiply;
+  z-index: -1;
+}
+
+.footer-body {
+  padding: var(--space-9) 0 var(--space-7);
+}
+
+/* Grid */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: var(--space-6) var(--space-7);
+}
+
+@media (max-width: 1199px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-7) var(--space-8); }
+}
+
+@media (max-width: 575px) {
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-7); }
+}
+
+/* Widget headings */
+.footer-widget__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  letter-spacing: 0.02em;
+}
+
+/* About widget */
+.footer-about__desc {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+/* Links list */
+.footer-links { display: flex; flex-direction: column; gap: var(--space-2); }
+
+.footer-links__item a {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) 0;
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+}
+
+.footer-links__item a i {
+  font-size: 0.75rem;
+  color: var(--color-primary-light);
+  flex-shrink: 0;
+}
+
+.footer-links__item a:hover,
+.footer-links__item a:focus-visible {
+  color: var(--color-white);
+  padding-left: var(--space-2);
+}
+
+/* Footer bottom bar */
+.footer-bottom {
+  background: rgba(0,0,0,0.35);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: var(--space-4) 0;
+}
+
+.footer-bottom__inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.footer-legal-links__item {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.8rem;
+  transition: color var(--transition-fast);
+}
+
+.footer-legal-links__item:hover { color: var(--color-white); }
+
+.footer-legal-links .divider {
+  color: rgba(255,255,255,0.25);
+  font-size: 0.8rem;
+}
+
+/* Chatbot FAB */
+.chatbot-fab {
+  position: fixed;
+  bottom: var(--space-7);
+  right: var(--space-7);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.28);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  z-index: var(--z-top);
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+.chatbot-fab:hover,
+.chatbot-fab:focus-visible {
+  transform: scale(1.1);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+}
+
+.chatbot-fab img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 575px) {
+  .chatbot-fab {
+    width: 48px;
+    height: 48px;
+    bottom: var(--space-4);
+    right: var(--space-4);
+  }
+}

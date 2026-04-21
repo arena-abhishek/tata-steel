@@ -1,0 +1,90 @@
+/* ============================================================
+   CARD STACKING SCROLL ANIMATION
+   Desktop: sections stack on scroll (GSAP pinned)
+   Tablet/Mobile: normal scroll flow
+   ============================================================ */
+
+/* ---- DESKTOP (≥ 992px) ---- */
+@media (min-width: 992px) {
+  .scroll-stack {
+    position: relative;
+  }
+
+  .scroll-stack__item {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    will-change: transform, opacity;
+    /* GPU-accelerated */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* Natural stacking order: first item on top initially */
+  .scroll-stack__item:first-child { z-index: 5; }
+  .scroll-stack__item:nth-child(2){ z-index: 4; }
+  .scroll-stack__item:nth-child(3){ z-index: 3; }
+  .scroll-stack__item:nth-child(4){ z-index: 2; }
+  .scroll-stack__item:nth-child(5){ z-index: 1; }
+}
+
+/* ---- TABLET (768–991px) ---- */
+@media (min-width: 768px) and (max-width: 991px) {
+  .scroll-stack { display: block; }
+  .scroll-stack__item {
+    position: static !important;
+    height: auto !important;
+    min-height: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    will-change: auto;
+  }
+
+  /* Subtle fade-in on scroll for tablet */
+  .scroll-stack__item {
+    animation: fadeSlideUp 0.55s ease forwards;
+    animation-play-state: paused;
+  }
+  .scroll-stack__item.in-view {
+    animation-play-state: running;
+  }
+}
+
+/* ---- MOBILE (< 768px) ---- */
+@media (max-width: 767px) {
+  .scroll-stack { display: block; }
+  .scroll-stack__item {
+    position: static !important;
+    height: auto !important;
+    min-height: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    will-change: auto;
+    /* No animations on mobile — performance first */
+  }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   ANIMATION HELPERS
+   ============================================================ */
+
+/* Blob + float already in sections.css */
+
+/* Reduce-motion: respect user preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

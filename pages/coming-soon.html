@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon | Tata Steel UISL</title>
+  <meta name="description" content="This page is coming soon. Tata Steel Utilities and Infrastructure Services Limited.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #1072b8;
+      --primary-dark: #0c548a;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: linear-gradient(135deg, #07233c 0%, #0c548a 50%, #1072b8 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      color: #fff;
+    }
+
+    .logo-wrap {
+      margin-bottom: 64px;
+    }
+
+    .logo-wrap img {
+      height: 60px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .icon-wrap {
+      font-size: 4rem;
+      color: rgba(255,255,255,0.2);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    h1 span {
+      display: block;
+      font-weight: 300;
+      font-size: 0.5em;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 8px;
+    }
+
+    p.sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.62);
+      max-width: 400px;
+      line-height: 1.7;
+      margin: 0 auto 48px;
+    }
+
+    a.back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.22);
+      padding: 12px 28px;
+      border-radius: 50px;
+      transition: background 0.25s, color 0.25s;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    a.back-btn:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border-color: rgba(255,255,255,0.45);
+    }
+
+    /* Pulsing dots decoration */
+    .dots {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+
+    .dot:nth-child(1) { animation-delay: 0s; }
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1);   opacity: 0.4; }
+      50%       { transform: scale(1.4); opacity: 1;   }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="logo-wrap">
+    <img src="../assets/images/logo.webp" alt="Tata Steel UISL Logo" loading="eager">
+  </div>
+
+  <div class="icon-wrap" aria-hidden="true">
+    <i class="fa fa-tools"></i>
+  </div>
+
+  <h1>
+    <span>Page</span>
+    Coming Soon
+  </h1>
+
+  <p class="sub">
+    We're working hard to bring you this page. Check back soon for more content.
+  </p>
+
+  <div class="dots" aria-hidden="true">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <a href="../index.html" class="back-btn">
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    Back to Homepage
+  </a>
+</body>
+</html>
